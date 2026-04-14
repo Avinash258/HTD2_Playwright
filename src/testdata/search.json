@@ -1,0 +1,18 @@
+{
+  "sortOptions": {
+    "nameAZ": "az",
+    "nameZA": "za",
+    "priceLowHigh": "lohi",
+    "priceHighLow": "hilo"
+  },
+  "expectedFirstItem": {
+    "nameAZ": "Sauce Labs Backpack",
+    "nameZA": "Test.allTheThings() T-Shirt (Red)",
+    "priceLowHigh": "Sauce Labs Onesie",
+    "priceHighLow": "Sauce Labs Fleece Jacket"
+  },
+  "expectedFirstPrice": {
+    "priceLowHigh": "$7.99",
+    "priceHighLow": "$49.99"
+  }
+}

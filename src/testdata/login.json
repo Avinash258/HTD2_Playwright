@@ -1,0 +1,25 @@
+{
+"baseUrl": "https://www.saucedemo.com/",
+"PageTile": "Swag Labs",
+"inventoryUrlPattern": "inventory",
+"validUser": {
+    "username": "standard_user",
+    "password": "secret_sauce"
+
+} ,
+
+"lockedUser": {
+    "username": "locked_out_user",
+    "password": "secret_sauce",  
+    "errorMessage": "Epic sadface: Sorry, this user has been locked out."
+}   ,        
+
+"invalidUser": {
+    "username": "invalid_user",
+    "password": "invalid_password"  ,
+    "errorMessages": "Epic sadface: Username and password do not match any user in this service"
+}   
+ 
+
+
+}
