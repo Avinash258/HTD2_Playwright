@@ -1,4 +1,4 @@
-import { Page } from "@playwright/test";
+import { Locator, Page } from "@playwright/test";
 import { LoginPage } from "../page/loginPage";
 
 export class LoginAction {
@@ -21,7 +21,7 @@ export class LoginAction {
     await this.loginPage.loginButton.click();
   }
 
-  async getErrorMessage() {
+  getErrorMessage(): Locator {
     return this.loginPage.errorMessage;
   }
 }

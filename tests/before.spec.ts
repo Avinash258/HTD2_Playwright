@@ -13,15 +13,15 @@ test('my test', async ({ page }) => {
   await expect(page).toHaveTitle('Example Domain');
 });
 
-test ('TC01 - Valid user should login successfully', async ({ page }) => {
+test('TC01 - Example domain has correct title', async ({ page }) => {
   await page.goto('https://example.com');
   await expect(page).toHaveTitle('Example Domain');
 }); 
 
-test('TC02 - Locked out user should not login', async ({ page }) => {
-  // ...
+test.skip('TC02 - Locked out user should not login', async () => {
+  // Intentionally skipped until locked user flow assertions are implemented.
 });
 
-test('TC03 - Invalid user should not login', async ({ page }) => {
-  // ...
+test.skip('TC03 - Invalid user should not login', async () => {
+  // Intentionally skipped until invalid user flow assertions are implemented.
 }); 
