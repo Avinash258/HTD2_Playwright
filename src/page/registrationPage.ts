@@ -15,7 +15,7 @@ export class RegistrationPage {
     readonly month: Locator;
     readonly year: Locator;
     
-    readonly createAccountButton: Locator;
+    readonly createAccountButton: Locator;// Updated by Goury
     
  
     
