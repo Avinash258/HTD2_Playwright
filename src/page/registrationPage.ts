@@ -25,7 +25,7 @@ export class RegistrationPage {
 
     readonly country: Locator; // updated by shubham
     readonly state: Locator; // updated by shubham
-
+    readonly mobilenumber: Locator; // Anil
 
     constructor(page: Page) {
         this.page = page;
@@ -52,6 +52,17 @@ export class RegistrationPage {
         this.state = page.locator("//input[@id='state']"); // updated by shubham
         
 
+
+
+
+
+
+
+
+
+
+
+        this.mobilenumber = page.locator("//input[@id='mobile_number']"); // Anil
 
 }
 
