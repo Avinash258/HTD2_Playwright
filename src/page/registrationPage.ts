@@ -13,12 +13,16 @@ export class RegistrationPage {
     readonly date: Locator;
     readonly month: Locator;
     readonly year: Locator;
+<<<<<<< HEAD
     
  
     
     
 // Arvind
     readonly city:Locator;
+=======
+    readonly State: Locator;
+>>>>>>> 462529e (done)
 
 
     constructor(page: Page) {
@@ -39,6 +43,9 @@ export class RegistrationPage {
         
           
         this.city=page.locator('input[name="city"]');
+
+        
+        this.State = page.locator("//input[@id='state']");
 
 
 
