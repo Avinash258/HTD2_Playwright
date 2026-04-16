@@ -1,11 +1,20 @@
 import loginData from "../../src/testdata/login.json";
 import { test , expect } from "../../src/fixture/fixture";
 
+test.beforeEach(async ({ page }) => {
+    await page.goto(loginData.baseUrl);
+console.log("Before Each Hook");
+});
+test.afterEach(async ({ page }) => {
+    
+console.log("After Each Hook");
+});
+
 test("TC01 - Valid user should login successfully", async ({ page, appAction }) => {
-await appAction.login.login(loginData.validUser.username,loginData.validUser.password);
-//await appAction.login.login(loginData.validUser.username, loginData.validUser.password);
-await expect(page).toHaveTitle(loginData.PageTile);
+await appAction.login.loginWithClear(loginData.validUser.username,loginData.validUser.password);
+await expect(page).toHaveTitle(loginData.PageTitle);
 await expect(page).toHaveURL(new RegExp(loginData.inventoryUrlPattern));
+await appAction.search.sortBy("Name (A to Z)");
 });
 
 test("TC02 - Locked out user should not login", async ({ appAction }) => {
