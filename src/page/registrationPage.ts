@@ -13,12 +13,11 @@ export class RegistrationPage {
     readonly date: Locator;
     readonly month: Locator;
     readonly year: Locator;
+    readonly newsletter: Locator;
+    readonly SpecialoffersNewsletter: Locator;
     
  
-    
-    
-// Arvind
-    readonly city:Locator;
+
 
 
     constructor(page: Page) {
@@ -35,10 +34,10 @@ export class RegistrationPage {
         this.date = page.locator('#days');
         this.month = page.locator('//select[@data-qa="months"]');
         this.year = page.locator('[name="years"]');
+        this.newsletter = page.getByRole('checkbox', { name: 'Sign up for our newsletter!' });
+        this.SpecialoffersNewsletter = page.getByRole('checkbox', { name: 'Receive special offers from our partners!' });
         
         
-          
-        this.city=page.locator('input[name="city"]');
 
 
 
