@@ -15,6 +15,11 @@ export class RegistrationPage {
     readonly year: Locator;
     
     readonly create_Account :Locator;
+ 
+    
+    
+// Arvind
+    readonly city:Locator;
 
 
     constructor(page: Page) {
@@ -34,6 +39,10 @@ export class RegistrationPage {
         //Deepanshu changes
         
         this.create_Account=page.locator('//button[text()="Create Account"]')
+        
+        
+          
+        this.city=page.locator('input[name="city"]');
 
 
 
