@@ -1,4 +1,4 @@
-import { Locator, Page } from "@playwright/test";
+﻿import { Locator, Page } from "@playwright/test";
 
 export class RegistrationPage {
     readonly page: Page;
@@ -30,6 +30,8 @@ export class RegistrationPage {
     
  
 
+    readonly mobileNumber:Locator;
+    readonly create_Account :Locator;
 
 
     constructor(page: Page) {
@@ -48,6 +50,9 @@ export class RegistrationPage {
         this.days = page.locator('#days');
         this.months = page.locator('//select[@data-qa="months"]');
         this.years = page.locator('[name="years"]');
+        //Deepanshu changes
+        this.mobileNumber=page.locator('[data-qa="mobile_number"]')
+        this.create_Account=page.locator('//button[text()="Create Account"]')
         this.newsletter = page.getByRole('checkbox', { name: 'Sign up for our newsletter!' });
         this.SpecialoffersNewsletter = page.getByRole('checkbox', { name: 'Receive special offers from our partners!' });
         
