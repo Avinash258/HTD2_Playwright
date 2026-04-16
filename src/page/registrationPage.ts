@@ -14,6 +14,12 @@ export class RegistrationPage {
     readonly month: Locator;
     readonly year: Locator;
     readonly MobileNumber: Locator;
+    
+ 
+    
+    
+
+
 
     constructor(page: Page) {
         this.page = page;
@@ -30,6 +36,10 @@ export class RegistrationPage {
         this.month = page.locator('//select[@data-qa="months"]');
         this.year = page.locator('[name="years"]');
         this.MobileNumber = page.getByLabel('mobile number');
+        
+        
+          
+
 
 
 }
