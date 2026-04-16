@@ -7,6 +7,7 @@ export class RegistrationPage {
     readonly signupEmail: Locator;
     readonly signupButton: Locator;
     readonly title :Locator;
+    readonly title2 :Locator;
     readonly username: Locator;
     readonly useremail: Locator;
     readonly password: Locator;
@@ -28,6 +29,7 @@ export class RegistrationPage {
         this.signupEmail = page.locator('//*[@data-qa="signup-email"]');
         this.signupButton = page.getByRole('button', { name: 'Sign Up' });
         this.title =    page.getByRole('radio', { name: 'Mr' });
+        this.title2 =    page.getByRole('radio', { name: 'Mrs' });
         this.username = page.getByLabel('name');
         this.useremail = page.getByLabel('email');
         this.password = page.getByLabel('password');
