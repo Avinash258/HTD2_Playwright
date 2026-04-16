@@ -14,8 +14,8 @@ export class RegistrationPage {
     readonly date: Locator;
     readonly month: Locator;
     readonly year: Locator;
-    readonly newsletter: Locator;
-    readonly SpecialoffersNewsletter: Locator;
+   // readonly newsletter: Locator;
+//readonly SpecialoffersNewsletter: Locator;
     readonly zipcode: Locator;
 
     
