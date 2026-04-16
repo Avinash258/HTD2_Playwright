@@ -13,13 +13,15 @@ export class RegistrationPage {
     readonly date: Locator;
     readonly month: Locator;
     readonly year: Locator;
+    readonly newsletter: Locator;
+    readonly SpecialoffersNewsletter: Locator;
     
     readonly create_Account :Locator;
  
-    
-    
-// Arvind
-    readonly city:Locator;
+
+
+    readonly country: Locator; // updated by shubham
+    readonly state: Locator; // updated by shubham
 
 
     constructor(page: Page) {
@@ -41,9 +43,10 @@ export class RegistrationPage {
         this.create_Account=page.locator('//button[text()="Create Account"]')
         
         
-          
-        this.city=page.locator('input[name="city"]');
 
+        this.country = page.locator("//select[@id='country']");  // updated by shubham
+        this.state = page.locator("//input[@id='state']"); // updated by shubham
+        
 
 
 }
