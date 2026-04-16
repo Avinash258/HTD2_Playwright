@@ -16,6 +16,8 @@ export class RegistrationPage {
     readonly year: Locator;
     readonly newsletter: Locator;
     readonly SpecialoffersNewsletter: Locator;
+    readonly zipcode: Locator;
+
     
     readonly create_Account :Locator;
  
@@ -36,7 +38,7 @@ export class RegistrationPage {
         this.username = page.getByLabel('name');
         this.useremail = page.getByLabel('email');
         this.password = page.getByLabel('password');
-
+        this.zipcode = page.locator('//input[@data-qa="zipcode"]');
         this.date = page.locator('#days');
         this.month = page.locator('//select[@data-qa="months"]');
         this.year = page.locator('[name="years"]');
