@@ -13,9 +13,9 @@ export class RegistrationPage {
     readonly date: Locator;
     readonly month: Locator;
     readonly year: Locator;
-    readonly country: Locator;
-    readonly state: Locator;
-    readonly city: Locator;
+
+    readonly country: Locator; // updated by shubham
+    readonly state: Locator; // updated by shubham
 
 
     constructor(page: Page) {
@@ -33,9 +33,9 @@ export class RegistrationPage {
         this.month = page.locator('//select[@data-qa="months"]');
         this.year = page.locator('[name="years"]');
 
-        this.country = page.locator("//select[@id='country']");
-        this.state = page.locator("//input[@id='state']");
-        this.city = page.locator("//input[@id='city']");
+        this.country = page.locator("//select[@id='country']");  // updated by shubham
+        this.state = page.locator("//input[@id='state']"); // updated by shubham
+        
 
 
 }
