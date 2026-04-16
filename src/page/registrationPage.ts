@@ -24,7 +24,9 @@ export class RegistrationPage {
 
     readonly accountCreatedMessage: Locator;
     readonly continueButton: Locator;
-    readonly loggedInAsText: Locator;
+    readonly loggedInAsText: Locator;    readonly newsletter: Locator;
+    readonly SpecialoffersNewsletter: Locator;
+
 
     constructor(page: Page) {
         this.page = page;
