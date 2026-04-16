@@ -19,6 +19,9 @@ export class RegistrationPage {
  
 
 
+    readonly country: Locator; // updated by shubham
+    readonly state: Locator; // updated by shubham
+
 
     constructor(page: Page) {
         this.page = page;
@@ -39,6 +42,9 @@ export class RegistrationPage {
         
         
 
+        this.country = page.locator("//select[@id='country']");  // updated by shubham
+        this.state = page.locator("//input[@id='state']"); // updated by shubham
+        
 
 
 }
