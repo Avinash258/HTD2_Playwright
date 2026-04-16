@@ -13,6 +13,7 @@ export class RegistrationPage {
     readonly date: Locator;
     readonly month: Locator;
     readonly year: Locator;
+<<<<<<< HEAD
     
     readonly createAccountButton: Locator;
     
@@ -21,6 +22,16 @@ export class RegistrationPage {
     
 // Arvind
     readonly city:Locator;
+=======
+    readonly newsletter: Locator;
+    readonly SpecialoffersNewsletter: Locator;
+    
+ 
+
+
+    readonly country: Locator; // updated by shubham
+    readonly state: Locator; // updated by shubham
+>>>>>>> 576a82af95bc00e3ead9418a4a72a0c5b591bf9d
 
 
     constructor(page: Page) {
@@ -37,6 +48,7 @@ export class RegistrationPage {
         this.date = page.locator('#days');
         this.month = page.locator('//select[@data-qa="months"]');
         this.year = page.locator('[name="years"]');
+
         
         
           
@@ -48,6 +60,16 @@ export class RegistrationPage {
 
         this.createAccountButton = page.getByRole('button', { name: 'Create Account' });
 
+
+        this.newsletter = page.getByRole('checkbox', { name: 'Sign up for our newsletter!' });
+        this.SpecialoffersNewsletter = page.getByRole('checkbox', { name: 'Receive special offers from our partners!' });
+        
+        
+
+        this.country = page.locator("//select[@id='country']");  // updated by shubham
+        this.state = page.locator("//input[@id='state']"); // updated by shubham
+        
+>>>>>>> 576a82af95bc00e3ead9418a4a72a0c5b591bf9d
 
 
 }

@@ -22,7 +22,7 @@ export const test = base.extend<Fixtures>({
     async ({ page }, use) => {
       await page.goto(loginData.baseUrl);
       await use();
-    },
+      },
     { auto: true },
   ],
 
