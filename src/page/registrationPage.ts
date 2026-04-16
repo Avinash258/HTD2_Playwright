@@ -17,6 +17,7 @@ export class RegistrationPage {
     readonly newsletter: Locator;
     readonly SpecialoffersNewsletter: Locator;
     
+    readonly create_Account :Locator;
  
 
 
@@ -39,8 +40,9 @@ export class RegistrationPage {
         this.date = page.locator('#days');
         this.month = page.locator('//select[@data-qa="months"]');
         this.year = page.locator('[name="years"]');
-        this.newsletter = page.getByRole('checkbox', { name: 'Sign up for our newsletter!' });
-        this.SpecialoffersNewsletter = page.getByRole('checkbox', { name: 'Receive special offers from our partners!' });
+        //Deepanshu changes
+        
+        this.create_Account=page.locator('//button[text()="Create Account"]')
         
         
 
