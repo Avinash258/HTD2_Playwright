@@ -13,6 +13,8 @@ export class RegistrationPage {
     readonly date: Locator;
     readonly month: Locator;
     readonly year: Locator;
+    readonly mobileNumber:Locator;
+    readonly create_Account :Locator;
 
 
     constructor(page: Page) {
@@ -29,6 +31,9 @@ export class RegistrationPage {
         this.date = page.locator('#days');
         this.month = page.locator('//select[@data-qa="months"]');
         this.year = page.locator('[name="years"]');
+        //Deepanshu changes
+        this.mobileNumber=page.locator('[data-qa="mobile_number"]')
+        this.create_Account=page.locator('//button[text()="Create Account"]')
 
 
 
