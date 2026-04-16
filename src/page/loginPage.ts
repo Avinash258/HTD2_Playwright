@@ -6,13 +6,13 @@ export class LoginPage {
   readonly passwordInput: Locator;
   readonly loginButton: Locator;
   readonly errorMessage: Locator;
-  readonly fullname: Locator;
+  //readonly fullname: Locator;
 
   constructor(page: Page) {
     this.page = page;
     this.usernameInput = page.getByRole("textbox", { name: "Username" });
 
-    this.fullname = page.getByLabel("Full Name");
+   // this.fullname = page.getByLabel("Full Name");
 
     this.loginButton = page.getByText("Log");
     this.loginButton = page.getByText("Login", { exact: true });

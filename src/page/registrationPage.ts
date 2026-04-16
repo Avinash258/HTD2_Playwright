@@ -7,6 +7,7 @@ export class RegistrationPage {
     readonly signupEmail: Locator;
     readonly signupButton: Locator;
     readonly title :Locator;
+    readonly title2 :Locator;
     readonly username: Locator;
     readonly useremail: Locator;
     readonly password: Locator;
@@ -23,7 +24,10 @@ export class RegistrationPage {
     readonly city:Locator;
     readonly newsletter: Locator;
     readonly SpecialoffersNewsletter: Locator;
+    readonly zipcode: Locator;
+
     
+    readonly create_Account :Locator;
  
 
 
@@ -38,10 +42,11 @@ export class RegistrationPage {
         this.signupEmail = page.locator('//*[@data-qa="signup-email"]');
         this.signupButton = page.getByRole('button', { name: 'Sign Up' });
         this.title =    page.getByRole('radio', { name: 'Mr' });
+        this.title2 =    page.getByRole('radio', { name: 'Mrs' });
         this.username = page.getByLabel('name');
         this.useremail = page.getByLabel('email');
         this.password = page.getByLabel('password');
-
+        this.zipcode = page.locator('//input[@data-qa="zipcode"]');
         this.date = page.locator('#days');
         this.month = page.locator('//select[@data-qa="months"]');
         this.year = page.locator('[name="years"]');
@@ -58,6 +63,9 @@ export class RegistrationPage {
 
         this.newsletter = page.getByRole('checkbox', { name: 'Sign up for our newsletter!' });
         this.SpecialoffersNewsletter = page.getByRole('checkbox', { name: 'Receive special offers from our partners!' });
+        //Deepanshu changes
+        
+        this.create_Account=page.locator('//button[text()="Create Account"]')
         
         
 
