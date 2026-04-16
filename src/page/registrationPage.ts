@@ -16,6 +16,10 @@ export class RegistrationPage {
     readonly year: Locator;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    readonly State: Locator;
+>>>>>>> 1a46da3c5dfdfd95f4834b4aba9595e72d8bcce3
     
  
     
@@ -58,6 +62,7 @@ export class RegistrationPage {
         
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         
         this.State = page.locator("//input[@id='state']");
 
@@ -66,6 +71,11 @@ export class RegistrationPage {
         this.state = page.locator("//input[@id='state']"); // updated by shubham
         
 >>>>>>> develop
+=======
+        
+        this.State = page.locator("//input[@id='state']");
+
+>>>>>>> 1a46da3c5dfdfd95f4834b4aba9595e72d8bcce3
 
 
 }
