@@ -17,10 +17,7 @@ export class RegistrationPage {
     readonly SpecialoffersNewsletter: Locator;
     
  
-    
-    
-// Arvind
-    readonly city:Locator;
+
 
 
     constructor(page: Page) {
@@ -41,8 +38,6 @@ export class RegistrationPage {
         this.SpecialoffersNewsletter = page.getByRole('checkbox', { name: 'Receive special offers from our partners!' });
         
         
-          
-        this.city=page.locator('input[name="city"]');
 
 
 
