@@ -26,10 +26,6 @@
     "@types/node": "^25.5.2"
   },
   "dependencies": {
-<<<<<<< HEAD
-=======
-    "@faker-js/faker": "^10.4.0",
->>>>>>> 939251932b8bb3e7fd8466be253544e21126253e
     "playwright": "^1.59.1"
   }
 }
