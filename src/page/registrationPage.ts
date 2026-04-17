@@ -14,8 +14,13 @@ export class RegistrationPage {
     readonly date: Locator;
     readonly month: Locator;
     readonly year: Locator;
+<<<<<<<<< Temporary merge branch 1
     readonly newsletter: Locator;
     readonly SpecialoffersNewsletter: Locator;
+=========
+   // readonly newsletter: Locator;
+//readonly SpecialoffersNewsletter: Locator;
+>>>>>>>>> Temporary merge branch 2
     readonly zipcode: Locator;
 
     
