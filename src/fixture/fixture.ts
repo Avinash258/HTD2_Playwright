@@ -6,11 +6,16 @@ import { CartAction } from "../action/cartaction";
 import { CartPage } from "../page/cartPage";
 import { SearchAction } from "../action/searchAction";
 import { SearchPage } from "../page/searchPage";
+import { RegistrationAction } from "../action/registrationAction";
+import { HomeAction } from "../action/homeAction";
+import { HomePage } from "../page/homePage";
 
 type AppActions = {
+  home: HomeAction;
   login: LoginAction;
   cart: CartAction;
   search: SearchAction;
+  registration: RegistrationAction;
 };
 type Fixtures = {
   gotoBaseUrl: void;
@@ -29,9 +34,11 @@ export const test = base.extend<Fixtures>({
 
  appAction: async ({ page }, use: (value: AppActions) => Promise<void>) => {
     const appAction: AppActions = {
+      home: new HomeAction(new HomePage(page)),
       login: new LoginAction(page),
       cart: new CartAction(new CartPage(page)),
       search: new SearchAction(new SearchPage(page)),
+      registration: new RegistrationAction(page),
     };
     await use(appAction);
   },
