@@ -1,4 +1,4 @@
-import { Locator, Page} from '@playwright/test';
+import { Locator, Page } from "@playwright/test";
 
 export class RegistrationPage {
     readonly page: Page;
@@ -6,11 +6,10 @@ export class RegistrationPage {
     readonly signupName: Locator;
     readonly signupEmail: Locator;
     readonly signupButton: Locator;
-    readonly title :Locator;
-    readonly title2 :Locator;
-    readonly username: Locator;
-    readonly useremail: Locator;
+
+    readonly titleMr: Locator;
     readonly password: Locator;
+<<<<<<< HEAD
     readonly date: Locator;
     readonly month: Locator;
     readonly year: Locator;
@@ -25,14 +24,28 @@ export class RegistrationPage {
 
     
  
+=======
+    readonly days: Locator;
+    readonly months: Locator;
+    readonly years: Locator;
+    readonly firstName: Locator;
+    readonly lastName: Locator;
+    readonly address: Locator;
+    readonly country: Locator;
+    readonly state: Locator;
+    readonly city: Locator;
+    readonly zipcode: Locator;
+    readonly mobileNumber: Locator;
+    readonly createAccountButton: Locator;
+>>>>>>> 939251932b8bb3e7fd8466be253544e21126253e
 
-
-    readonly country: Locator; // updated by shubham
-    readonly state: Locator; // updated by shubham
-    readonly mobilenumber: Locator; // Anil
+    readonly accountCreatedMessage: Locator;
+    readonly continueButton: Locator;
+    readonly loggedInAsText: Locator;
 
     constructor(page: Page) {
         this.page = page;
+<<<<<<< HEAD
         this.signupLoginLink = page.getByRole('link', { name: 'Sign Up / Login' });
         this.signupName = page.getByRole('textbox', { name: 'Name' });
         this.signupEmail = page.locator('//*[@data-qa="signup-email"]');
@@ -51,30 +64,31 @@ export class RegistrationPage {
         
           
         this.city=page.locator('input[name="city"]');
+=======
+        this.signupLoginLink = page.getByRole("link", { name: "Signup / Login" });
+        this.signupName = page.locator('[data-qa="signup-name"]');
+        this.signupEmail = page.locator('[data-qa="signup-email"]');
+        this.signupButton = page.locator('[data-qa="signup-button"]');
+>>>>>>> 939251932b8bb3e7fd8466be253544e21126253e
 
+        this.titleMr = page.locator("#id_gender1");
+        this.password = page.locator('[data-qa="password"]');
+        this.days = page.locator('[data-qa="days"]');
+        this.months = page.locator('[data-qa="months"]');
+        this.years = page.locator('[data-qa="years"]');
+        this.firstName = page.locator('[data-qa="first_name"]');
+        this.lastName = page.locator('[data-qa="last_name"]');
+        this.address = page.locator('[data-qa="address"]');
+        this.country = page.locator('[data-qa="country"]');
+        this.state = page.locator('[data-qa="state"]');
+        this.city = page.locator('[data-qa="city"]');
+        this.zipcode = page.locator('[data-qa="zipcode"]');
+        this.mobileNumber = page.locator('[data-qa="mobile_number"]');
+        this.createAccountButton = page.locator('[data-qa="create-account"]');
 
-
-
-
-        this.createAccountButton = page.getByRole('button', { name: 'Create Account' });
-
-        this.newsletter = page.getByRole('checkbox', { name: 'Sign up for our newsletter!' });
-        this.SpecialoffersNewsletter = page.getByRole('checkbox', { name: 'Receive special offers from our partners!' });
-        //Deepanshu changes
-        
-         this.country = page.locator('#country');
-
-        this.city=page.locator('input[name="city"]');
-        this.create_Account=page.locator('//button[text()="Create Account"]')
-        
-        
-
-        this.country = page.locator("//select[@id='country']");  // updated by shubham Nigam
-        this.state = page.locator("//input[@id='state']"); // updated by shubham Nigam
-        
-        this.mobilenumber = page.locator("//input[@id='mobile_number']"); // Anil
-
-}
-
+        this.accountCreatedMessage = page.getByText("Account Created!");
+        this.continueButton = page.locator('[data-qa="continue-button"]');
+        this.loggedInAsText = page.getByText("Logged in as");
+    }
 }
 
