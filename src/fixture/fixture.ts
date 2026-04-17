@@ -8,15 +8,21 @@ import { SearchAction } from "../action/searchAction";
 import { SearchPage } from "../page/searchPage";
 import { RegistrationAction } from "../action/registrationAction";
 
+import { HomePageActions } from "../action/HomePageAction";
+
+
+
 type AppActions = {
   login: LoginAction;
   cart: CartAction;
   search: SearchAction;
   registration: RegistrationAction;
+  home:HomePageActions;
 };
 type Fixtures = {
   gotoBaseUrl: void;
   appAction: AppActions;
+ 
 };
 
 export const test = base.extend<Fixtures>({
@@ -35,11 +41,13 @@ export const test = base.extend<Fixtures>({
       cart: new CartAction(new CartPage(page)),
       search: new SearchAction(new SearchPage(page)),
       registration: new RegistrationAction(page),
+      home:new HomePageActions(page),
     };
     await use(appAction);
   },
 
   
+
 });
 
 export { expect } from "@playwright/test";
