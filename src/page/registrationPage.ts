@@ -14,18 +14,27 @@ export class RegistrationPage {
     readonly date: Locator;
     readonly month: Locator;
     readonly year: Locator;
+    
+    readonly createAccountButton: Locator;// Updated by Goury
+    
+ 
+    
+    
+// Arvind
+    readonly city:Locator;
+    readonly country:Locator;
    // readonly newsletter: Locator;
 //readonly SpecialoffersNewsletter: Locator;
     readonly zipcode: Locator;
 
-    
+    readonly address: Locator;
     readonly create_Account :Locator;
  
 
 
     readonly country: Locator; // updated by shubham
     readonly state: Locator; // updated by shubham
-
+    readonly mobilenumber: Locator; // Anil
 
     constructor(page: Page) {
         this.page = page;
@@ -42,16 +51,32 @@ export class RegistrationPage {
         this.date = page.locator('#days');
         this.month = page.locator('//select[@data-qa="months"]');
         this.year = page.locator('[name="years"]');
+        
+        
+          
+        this.city=page.locator('input[name="city"]');
+
+
+
+
+
+        this.createAccountButton = page.getByRole('button', { name: 'Create Account' });
+
+        this.newsletter = page.getByRole('checkbox', { name: 'Sign up for our newsletter!' });
+        this.SpecialoffersNewsletter = page.getByRole('checkbox', { name: 'Receive special offers from our partners!' });
         //Deepanshu changes
         
+         this.country = page.locator('#country');
+
+        this.city=page.locator('input[name="city"]');
         this.create_Account=page.locator('//button[text()="Create Account"]')
         
         
 
-        this.country = page.locator("//select[@id='country']");  // updated by shubham
-        this.state = page.locator("//input[@id='state']"); // updated by shubham
+        this.country = page.locator("//select[@id='country']");  // updated by shubham Nigam
+        this.state = page.locator("//input[@id='state']"); // updated by shubham Nigam
         
-
+        this.mobilenumber = page.locator("//input[@id='mobile_number']"); // Anil
 
 }
 
