@@ -6,11 +6,13 @@ import { CartAction } from "../action/cartaction";
 import { CartPage } from "../page/cartPage";
 import { SearchAction } from "../action/searchAction";
 import { SearchPage } from "../page/searchPage";
+import { RegistrationAction } from "../action/registrationAction";
 
 type AppActions = {
   login: LoginAction;
   cart: CartAction;
   search: SearchAction;
+  registration: RegistrationAction;
 };
 type Fixtures = {
   gotoBaseUrl: void;
@@ -32,6 +34,7 @@ export const test = base.extend<Fixtures>({
       login: new LoginAction(page),
       cart: new CartAction(new CartPage(page)),
       search: new SearchAction(new SearchPage(page)),
+      registration: new RegistrationAction(page),
     };
     await use(appAction);
   },
