@@ -22,6 +22,7 @@ export class RegistrationPage {
     
 // Arvind
     readonly city:Locator;
+    readonly country:Locator;
    // readonly newsletter: Locator;
 //readonly SpecialoffersNewsletter: Locator;
     readonly zipcode: Locator;
@@ -65,6 +66,9 @@ export class RegistrationPage {
         this.SpecialoffersNewsletter = page.getByRole('checkbox', { name: 'Receive special offers from our partners!' });
         //Deepanshu changes
         
+         this.country = page.locator('#country');
+
+        this.city=page.locator('input[name="city"]');
         this.create_Account=page.locator('//button[text()="Create Account"]')
         
         
