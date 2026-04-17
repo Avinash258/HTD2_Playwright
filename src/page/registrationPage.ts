@@ -18,7 +18,7 @@ export class RegistrationPage {
 //readonly SpecialoffersNewsletter: Locator;
     readonly zipcode: Locator;
 
-    
+    readonly address: Locator;
     readonly create_Account :Locator;
  
 
@@ -46,22 +46,11 @@ export class RegistrationPage {
         
         this.create_Account=page.locator('//button[text()="Create Account"]')
         
-        
+        this.address = page.locator("//input[@name='state']"); // Ankit
 
         this.country = page.locator("//select[@id='country']");  // updated by shubham
         this.state = page.locator("//input[@id='state']"); // updated by shubham
         
-
-
-
-
-
-
-
-
-
-
-
         this.mobilenumber = page.locator("//input[@id='mobile_number']"); // Anil
 
 }
