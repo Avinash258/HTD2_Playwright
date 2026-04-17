@@ -36,8 +36,12 @@ export class RegistrationPage {
     readonly date: Locator;
     readonly month: Locator;
     readonly year: Locator;
+<<<<<<< HEAD
     
 >>>>>>> 9212132 (create account locator)
+=======
+    creadonly mobileNumber:Locator;
+>>>>>>> 98c8122 (okay changes)
     readonly create_Account :Locator;
 
 
@@ -58,7 +62,7 @@ export class RegistrationPage {
         this.months = page.locator('//select[@data-qa="months"]');
         this.years = page.locator('[name="years"]');
         //Deepanshu changes
-        
+        this.mobileNumber=page.locator('[data-qa="mobile_number"]')
         this.create_Account=page.locator('//button[text()="Create Account"]')
         this.newsletter = page.getByRole('checkbox', { name: 'Sign up for our newsletter!' });
         this.SpecialoffersNewsletter = page.getByRole('checkbox', { name: 'Receive special offers from our partners!' });
