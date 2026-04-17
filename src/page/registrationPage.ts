@@ -22,18 +22,18 @@ export class RegistrationPage {
     
 // Arvind
     readonly city:Locator;
-    readonly newsletter: Locator;
-    readonly SpecialoffersNewsletter: Locator;
+   // readonly newsletter: Locator;
+//readonly SpecialoffersNewsletter: Locator;
     readonly zipcode: Locator;
 
-    
+    readonly address: Locator;
     readonly create_Account :Locator;
  
 
 
     readonly country: Locator; // updated by shubham
     readonly state: Locator; // updated by shubham
-
+    readonly mobilenumber: Locator; // Anil
 
     constructor(page: Page) {
         this.page = page;
@@ -72,7 +72,7 @@ export class RegistrationPage {
         this.country = page.locator("//select[@id='country']");  // updated by shubham Nigam
         this.state = page.locator("//input[@id='state']"); // updated by shubham Nigam
         
-
+        this.mobilenumber = page.locator("//input[@id='mobile_number']"); // Anil
 
 }
 
