@@ -71,7 +71,7 @@ export class RegistrationPage {
         this.city=page.locator('input[name="city"]');
         this.create_Account=page.locator('//button[text()="Create Account"]')
         
-        
+        this.address = page.locator("//input[@name='state']"); // Ankit
 
         this.country = page.locator("//select[@id='country']");  // updated by shubham Nigam
         this.state = page.locator("//input[@id='state']"); // updated by shubham Nigam
