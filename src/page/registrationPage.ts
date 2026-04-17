@@ -14,6 +14,7 @@ export class RegistrationPage {
     readonly date: Locator;
     readonly month: Locator;
     readonly year: Locator;
+    readonly country:Locator;
    // readonly newsletter: Locator;
 //readonly SpecialoffersNewsletter: Locator;
     readonly zipcode: Locator;
@@ -44,6 +45,9 @@ export class RegistrationPage {
         this.year = page.locator('[name="years"]');
         //Deepanshu changes
         
+         this.country = page.locator('#country');
+
+        this.city=page.locator('input[name="city"]');
         this.create_Account=page.locator('//button[text()="Create Account"]')
         
         this.address = page.locator("//input[@name='state']"); // Ankit
