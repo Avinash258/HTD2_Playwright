@@ -1,4 +1,4 @@
-import { Locator, Page} from '@playwright/test';
+import { Locator, Page } from "@playwright/test";
 
 export class RegistrationPage {
     readonly page: Page;
@@ -6,26 +6,25 @@ export class RegistrationPage {
     readonly signupName: Locator;
     readonly signupEmail: Locator;
     readonly signupButton: Locator;
-    readonly title :Locator;
-    readonly title2 :Locator;
-    readonly username: Locator;
-    readonly useremail: Locator;
+
+    readonly titleMr: Locator;
     readonly password: Locator;
-    readonly date: Locator;
-    readonly month: Locator;
-    readonly year: Locator;
-   // readonly newsletter: Locator;
-//readonly SpecialoffersNewsletter: Locator;
+    readonly days: Locator;
+    readonly months: Locator;
+    readonly years: Locator;
+    readonly firstName: Locator;
+    readonly lastName: Locator;
+    readonly address: Locator;
+    readonly country: Locator;
+    readonly state: Locator;
+    readonly city: Locator;
     readonly zipcode: Locator;
+    readonly mobileNumber: Locator;
+    readonly createAccountButton: Locator;
 
-    
-    readonly create_Account :Locator;
- 
-
-
-    readonly country: Locator; // updated by shubham
-    readonly state: Locator; // updated by shubham
-    readonly mobilenumber: Locator; // Anil
+    readonly accountCreatedMessage: Locator;
+    readonly continueButton: Locator;
+    readonly loggedInAsText: Locator;    readonly mobilenumber: Locator; // Anil
 
     constructor(page: Page) {
         this.page = page;
