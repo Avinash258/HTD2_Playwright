@@ -1,4 +1,3 @@
-
 import { test as base } from "@playwright/test";
 import { LoginAction } from "../action/loginAction";
 import loginData from "../testdata/login.json";

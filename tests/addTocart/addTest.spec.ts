@@ -1,6 +1,5 @@
-
 import registration from "../../src/testdata/registration.json";
-import{ test, expect } from "../../src/fixture/Ankitfixture";
+import{ test, expect } from "../../src/fixture/AddToCartfixture";
 
 // Runs before each test
 test.beforeEach(async ({ page }) => {
