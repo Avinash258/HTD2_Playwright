@@ -3,9 +3,7 @@ import { LoginAction } from "../action/loginAction";
 import loginData from "../testdata/login.json";
 import registrationData from "../testdata/registration.json";
 
-import { CartAction } from "../action/cartaction";
-import { Productaction } from "../action/productaction";
-import { ProductPage } from "../page/productPage";
+import { CartAction } from "../action/cartaction";import { ProductPage } from "../page/productPage";
 import { CartPage } from "../page/cartPage";
 import { SearchAction } from "../action/searchAction";
 import { SearchPage } from "../page/searchPage";
