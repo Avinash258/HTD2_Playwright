@@ -4,59 +4,42 @@ import { TestCasesPage } from '../page/testcasePage';
 export class TestCasesActions {
   readonly page: Page;
   readonly testCasePage: TestCasesPage;
-
   constructor(page: Page) {
     this.page = page;
     this.testCasePage = new TestCasesPage(page);
   }
-
   async ClickLink() {
     await this.testCasePage.testCasesLink.click();
   }
-
-  // Navigate to Test Cases Page
   async navigateToTestCases() {
     await this.testCasePage.testCasesLink.click();
   }
-
-  // Verify page opened
   async verifyTestCasesPageOpened() {
     await expect(this.page).toHaveURL(/test_cases/);
     await expect(this.testCasePage.pageHeader).toContainText('Test Cases');
   }
-
-  // Expand a specific test case
   async expandTestCase(testCaseName: string) {
     await this.page.getByRole('link', { name: testCaseName }).click();
   }
-
   async verifyTestCaseExpanded(expectedText: string) {
     const expandedPanel = this.page.locator("//u[.='Test Case 1: Register User']"); 
 
     await expect(expandedPanel).toContainText(expectedText);
   }
-
-  // Scroll to bottom
   async scrollToBottom() {
     await this.page.evaluate(() => {
       window.scrollTo(0, document.body.scrollHeight);
     });
   }
-
-  // Verify all test cases present
   async verifyAllTestCasesPresent() {
     const count = await this.testCasePage.testCaseItems.count();
     expect(count).toBeGreaterThanOrEqual(26);
   }
-
-  // Verify page title
   async verifyPageTitle() {
     await expect(this.page).toHaveTitle(
       'Automation Practice Website for UI Testing - Test Cases'
     );
   }
-
-  // Verify no broken images
   async verifyImagesNotBroken() {
     const images = this.testCasePage.images;
     const count = await images.count();
@@ -69,7 +52,7 @@ export class TestCasesActions {
 
       const url = new URL(src, this.page.url()).toString();
       const response = await this.page.request.get(url);
-
+     
       expect(
         response.status(),
         ` Broken image found: ${url}`

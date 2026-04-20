@@ -9,7 +9,6 @@ export class TestCasesPage {
   readonly accordionHeadings: Locator;
   readonly accordionContent: Locator;
   readonly images: Locator;
-
   constructor(page: Page) {
     this.page = page;
 this.testCasesLink = this.page.locator('//a[@href="/test_cases"]').first();
@@ -18,7 +17,6 @@ this.testCasesLink = this.page.locator('//a[@href="/test_cases"]').first();
     this.accordionHeadings = page.locator('.panel-heading a');
     this.accordionContent = page.locator('.panel-collapse');
     this.images = page.locator('img');
-   
   }
   }
 
