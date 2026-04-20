@@ -8,8 +8,8 @@ export class ProductPage {
   readonly allproductList: Locator;
 
   readonly searchinputClick: Locator;
-  readonly searchButton: Locator;
   readonly searchedProducts: Locator;
+  readonly searchButton: Locator;
 
   readonly viewproductButton: Locator;
   readonly productInformation: Locator;
@@ -32,8 +32,8 @@ export class ProductPage {
     this.allproductList = page.locator(".features_items");
 
     this.searchinputClick = page.getByPlaceholder("Search Product");
-    this.searchButton = page.locator("#submit_search");
     this.searchedProducts = page.getByText("Searched Products");
+    this.searchButton = page.locator("#submit_search");
 
     this.viewproductButton = page.getByRole("link", { name: /view product/i }).first();
     this.productInformation = page.locator(".product-information");
