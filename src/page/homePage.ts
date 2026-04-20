@@ -19,23 +19,19 @@ export class HomePage {
 
     constructor(page: Page) {
         this.page = page;
-        this.logo = page.locator('img[alt="Website for automation practice"]');
+        this.logo = page.locator('a[href="/"] img');
         this.navbar = page.locator('ul.nav.navbar-nav');
-        this.navLinks = this.navbar.locator('li');
+        this.navLinks = this.navbar.getByRole('link');
         this.featuredSection = page.locator('.features_items');
         this.categorySidebar = page.locator('.left-sidebar');
         this.productCards = page.locator('.product-image-wrapper');
         this.productImages = this.productCards.locator('img');
         this.productNames = this.productCards.locator('.productinfo p');
         this.productPrices = this.productCards.locator('.productinfo h2');
-        this.addToCartButtons = this.productCards.locator('.add-to-cart');
-        this.womenCategory = this.categorySidebar.getByText('Women', { exact: true });
-        this.menCategory = this.categorySidebar.getByText('Men', { exact: true });
+        this.addToCartButtons = this.productCards.locator('a.add-to-cart:visible');
+        this.womenCategory = this.categorySidebar.getByText('Women', { exact: true }); 
+        this.menCategory = this.categorySidebar.getByText('Men', { exact: true }); 
         this.kidsCategory = this.categorySidebar.getByText('Kids', { exact: true });
-    }
-
-    async navigate(url: string) {
-        await this.page.goto(url);
     }
 
     async clickLogo() {

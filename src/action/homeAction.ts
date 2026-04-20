@@ -1,10 +1,10 @@
-import { expect } from '@playwright/test';
+import { expect, Page } from '@playwright/test';
 import { HomePage } from '../page/homePage';
 
 export class HomeAction {
 
     readonly homePage: HomePage;
-    page: any;
+    readonly page: Page;
 
     constructor(homePage: HomePage) {
         this.homePage = homePage;
@@ -12,10 +12,10 @@ export class HomeAction {
     }
 
     async verifyHomePageLoaded() {
-        await expect(this.homePage.page).toHaveURL("https://automationexercise.com/");
+        await expect(this.page).toHaveURL('/');
         await expect(this.homePage.logo).toBeVisible();
         await expect(this.homePage.navbar).toBeVisible();
-        await expect(this.homePage.featuredSection).toBeVisible(); ``
+        await expect(this.homePage.featuredSection).toBeVisible();
         await expect(this.homePage.categorySidebar).toBeVisible();
     }
 
@@ -36,10 +36,10 @@ export class HomeAction {
         }
     }
 
-    async verifyLogoRedirect(baseUrl: string) {
-        await this.homePage.page.goto(baseUrl + 'products');
+    async verifyLogoRedirect() {
+        await this.page.goto('/products');
         await this.homePage.clickLogo();
-        await expect(this.homePage.page).toHaveURL("https://automationexercise.com/");
+        await expect(this.page).toHaveURL('/');
     }
 
     async verifyFeaturedProducts() {
@@ -48,6 +48,7 @@ export class HomeAction {
 
         const count = await this.homePage.productCards.count();
         expect(count).toBeGreaterThan(0);
+
         for (let i = 0; i < Math.min(count, 3); i++) {
             await expect(this.homePage.productImages.nth(i)).toBeVisible();
             await expect(this.homePage.productNames.nth(i)).toBeVisible();

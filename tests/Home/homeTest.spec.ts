@@ -1,11 +1,6 @@
-import { test } from '../../src/fixture/fixture';
-import homeData from '../../src/testdata/home.json';
+import { test } from '../../src/fixture/home_fixture';
 
 test.describe('Home Page Test Cases', () => {
-
-    // test.beforeEach(async ({ page, baseURL }) => {
-    //     await page.goto(baseURL);
-    // });
 
     test('TC001 - Verify home page loads successfully', async ({ appAction }) => {
         await appAction.home.verifyHomePageLoaded();
@@ -16,7 +11,7 @@ test.describe('Home Page Test Cases', () => {
     });
 
     test('TC003 - Verify logo click redirects to home', async ({ appAction }) => {
-        await appAction.home.verifyLogoRedirect(homeData.baseUrl);
+        await appAction.home.verifyLogoRedirect();
     });
 
     test('TC004 - Verify featured products section is displayed', async ({ appAction }) => {

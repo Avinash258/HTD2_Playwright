@@ -11,7 +11,6 @@ import { HomePage } from "../page/homePage";
 import registrationData from "../testdata/registration.json";
 
 type AppActions = {
-  home: HomeAction;
   login: LoginAction;
   cart: CartAction;
   search: SearchAction;
@@ -33,7 +32,6 @@ export const test = base.extend<Fixtures>({
     await page.goto(baseURL); 
 
     const appAction: AppActions = {
-      home: new HomeAction(new HomePage(page)),
       login: new LoginAction(page),
       cart: new CartAction(new CartPage(page)),
       search: new SearchAction(new SearchPage(page)),
