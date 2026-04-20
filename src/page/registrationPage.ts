@@ -6,7 +6,6 @@ export class RegistrationPage {
     readonly signupName: Locator;
     readonly signupEmail: Locator;
     readonly signupButton: Locator;
- 
     readonly titleMr: Locator;
     readonly password: Locator;
     readonly days: Locator;
@@ -21,7 +20,6 @@ export class RegistrationPage {
     readonly zipcode: Locator;
     readonly mobileNumber: Locator;
     readonly createAccountButton: Locator;
- 
     readonly accountCreatedMessage: Locator;
     readonly continueButton: Locator;
     readonly loggedInAsText: Locator;
@@ -32,7 +30,6 @@ export class RegistrationPage {
         this.signupName = page.locator('[data-qa="signup-name"]');
         this.signupEmail = page.locator('[data-qa="signup-email"]');
         this.signupButton = page.locator('[data-qa="signup-button"]');
- 
         this.titleMr = page.locator("#id_gender1");
         this.password = page.locator('[data-qa="password"]');
         this.days = page.locator('[data-qa="days"]');
@@ -47,12 +44,8 @@ export class RegistrationPage {
         this.zipcode = page.locator('[data-qa="zipcode"]');
         this.mobileNumber = page.locator('[data-qa="mobile_number"]');
         this.createAccountButton = page.locator('[data-qa="create-account"]');
- 
         this.accountCreatedMessage = page.getByText("Account Created!");
         this.continueButton = page.locator('[data-qa="continue-button"]');
         this.loggedInAsText = page.getByText("Logged in as");
     }
 }
- 
- 
- 
