@@ -1,0 +1,22 @@
+{
+  "baseUrl": "https://automationexercise.com",
+
+  "validUser": {
+    "email": "gouri.vishwakarma@newvision-software.com",
+    "password": "Goury@1998"
+  },
+
+  "invalidUser": {
+    "email": "wronguser@test.com",
+    "password": "wrongpass123"
+  },
+
+  "signupUser": {
+    "name": "Test User"
+  },
+
+  "existingUser": {
+    "name": "Test User",
+    "email": "validuser@test.com"
+  }
+}
