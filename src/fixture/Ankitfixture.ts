@@ -1,3 +1,4 @@
+
 import { test as base } from "@playwright/test";
 import { LoginAction } from "../action/loginAction";
 import loginData from "../testdata/login.json";
@@ -9,11 +10,9 @@ import { SearchPage } from "../page/searchPage";
 import { RegistrationAction } from "../action/registrationAction";
 import { AddToCartAction } from "../action/AddToCartAction";
 
+import registration from "../testdata/registration.json";
 type AppActions = {
-  login: LoginAction;
-  cart: CartAction;
-  search: SearchAction;
-  registration: RegistrationAction;
+  
   addToCart: AddToCartAction;
 };
 type Fixtures = {
@@ -24,7 +23,7 @@ type Fixtures = {
 export const test = base.extend<Fixtures>({
   gotoBaseUrl: [
     async ({ page }, use) => {
-      await page.goto(loginData.baseUrl);
+      await page.goto(registration.baseUrl);
       await use();
       },
     { auto: true },
@@ -33,10 +32,7 @@ export const test = base.extend<Fixtures>({
 
  appAction: async ({ page }, use: (value: AppActions) => Promise<void>) => {
     const appAction: AppActions = {
-      login: new LoginAction(page),
-      cart: new CartAction(new CartPage(page)),
-      search: new SearchAction(new SearchPage(page)),
-      registration: new RegistrationAction(page),
+    
       addToCart: new AddToCartAction(page), 
     };
     await use(appAction);

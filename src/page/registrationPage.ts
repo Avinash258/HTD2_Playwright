@@ -22,44 +22,6 @@ export class RegistrationPage {
     readonly mobileNumber: Locator;
     readonly createAccountButton: Locator;
 
-<<<<<<< HEAD
-    readonly address: Locator;
-    readonly create_Account :Locator;
- 
-
-
-    readonly country: Locator; // updated by shubham
-    readonly state: Locator; // updated by shubham
-    readonly mobilenumber: Locator; // Anil
-
-    constructor(page: Page) {
-        this.page = page;
-        this.signupLoginLink = page.getByRole('link', { name: 'Sign Up / Login' });
-        this.signupName = page.getByRole('textbox', { name: 'Name' });
-        this.signupEmail = page.locator('//*[@data-qa="signup-email"]');
-        this.signupButton = page.getByRole('button', { name: 'Sign Up' });
-        this.title =    page.getByRole('radio', { name: 'Mr' });
-        this.title2 =    page.getByRole('radio', { name: 'Mrs' });
-        this.username = page.getByLabel('name');
-        this.useremail = page.getByLabel('email');
-        this.password = page.getByLabel('password');
-        this.zipcode = page.locator('//input[@data-qa="zipcode"]');
-        this.date = page.locator('#days');
-        this.month = page.locator('//select[@data-qa="months"]');
-        this.year = page.locator('[name="years"]');
-        //Deepanshu changes
-        
-        this.create_Account=page.locator('//button[text()="Create Account"]')
-        
-        this.address = page.locator("//input[@name='state']"); // Ankit
-
-        this.country = page.locator("//select[@id='country']");  // updated by shubham
-        this.state = page.locator("//input[@id='state']"); // updated by shubham
-        
-        this.mobilenumber = page.locator("//input[@id='mobile_number']"); // Anil
-
-}
-=======
     readonly accountCreatedMessage: Locator;
     readonly continueButton: Locator;
     readonly loggedInAsText: Locator;
@@ -85,7 +47,6 @@ export class RegistrationPage {
         this.zipcode = page.locator('[data-qa="zipcode"]');
         this.mobileNumber = page.locator('[data-qa="mobile_number"]');
         this.createAccountButton = page.locator('[data-qa="create-account"]');
->>>>>>> develop
 
         this.accountCreatedMessage = page.getByText("Account Created!");
         this.continueButton = page.locator('[data-qa="continue-button"]');
