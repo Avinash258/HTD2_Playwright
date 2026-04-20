@@ -26,40 +26,32 @@ export class RegistrationPage {
     readonly continueButton: Locator;
     readonly loggedInAsText: Locator;    readonly newsletter: Locator;
     readonly SpecialoffersNewsletter: Locator;
-<<<<<<< HEAD
-=======
     
  
 
->>>>>>> a46aba6 (Merge branch 'develop' into develop_zayd)
 
 
     constructor(page: Page) {
         this.page = page;
-<<<<<<< HEAD
         this.signupLoginLink = page.getByRole("link", { name: "Signup / Login" });
         this.signupName = page.locator('[data-qa="signup-name"]');
         this.signupEmail = page.locator('[data-qa="signup-email"]');
         this.signupButton = page.locator('[data-qa="signup-button"]');
-=======
         this.signupLoginLink = page.getByRole('link', { name: 'Sign Up / Login' });
         this.signupName = page.getByRole('textbox', { name: 'Name' });
         this.signupEmail = page.locator('//*[@data-qa="signup-email"]');
         this.signupButton = page.getByRole('button', { name: 'Sign Up' });
-        this.title =    page.getByRole('radio', { name: 'Mr' });
-        this.username = page.getByLabel('name');
-        this.useremail = page.getByLabel('email');
+        this.titleMr =    page.getByRole('radio', { name: 'Mr' });
         this.password = page.getByLabel('password');
 
-        this.date = page.locator('#days');
-        this.month = page.locator('//select[@data-qa="months"]');
-        this.year = page.locator('[name="years"]');
+        this.days = page.locator('#days');
+        this.months = page.locator('//select[@data-qa="months"]');
+        this.years = page.locator('[name="years"]');
         this.newsletter = page.getByRole('checkbox', { name: 'Sign up for our newsletter!' });
         this.SpecialoffersNewsletter = page.getByRole('checkbox', { name: 'Receive special offers from our partners!' });
         
         
 
->>>>>>> a46aba6 (Merge branch 'develop' into develop_zayd)
 
         this.titleMr = page.locator("#id_gender1");
         this.password = page.locator('[data-qa="password"]');

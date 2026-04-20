@@ -10,6 +10,7 @@ import { CartPage } from "../page/cartPage";
 import { SearchAction } from "../action/searchAction";
 import { SearchPage } from "../page/searchPage";
 import { RegistrationAction } from "../action/registrationAction";
+import { Productaction } from "../action/productAction";
 
 type AppActions = {
   login: LoginAction;
