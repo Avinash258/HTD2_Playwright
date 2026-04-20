@@ -32,7 +32,6 @@ export class ContactActions {
   }
 
   async submitForm() {
-    // ✅ handle alert properly
     this.page.once('dialog', async (dialog) => {
       await dialog.accept();
     });
@@ -44,7 +43,6 @@ export class ContactActions {
   async clickHome() {
     await this.contactPage.homeBtn.click();
 
-    // base URL verify
     await expect(this.page).toHaveURL(/automationexercise.com/);
   }
 }

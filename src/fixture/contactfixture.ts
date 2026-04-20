@@ -8,7 +8,7 @@ type AppActions = {
   contact: ContactActions;
 };
 
-// 
+
 type Fixtures = {
   gotoBaseUrl: void;
   appAction: AppActions;
@@ -16,7 +16,6 @@ type Fixtures = {
 
 export const test = base.extend<Fixtures>({
 
-  // ✅ Auto base URL (no need to write in every test)
   gotoBaseUrl: [
     async ({ page }, use) => {
       await page.goto(contactData.baseUrl);
@@ -25,7 +24,6 @@ export const test = base.extend<Fixtures>({
     { auto: true },
   ],
 
-  // ✅ Centralized actions (same as trainer)
   appAction: async ({ page }, use) => {
 
     const contactPage = new ContactPage(page);

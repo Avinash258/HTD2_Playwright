@@ -25,10 +25,8 @@ test.describe("Contact Us Test Cases", () => {
   test("TC028 - Verify form submission with blank fields", async ({ appAction }) => {
 
     await appAction.contact.navigateToContact();
-
     await appAction.contact.submitForm();
-
-    // stays on same page
+    
     await expect(appAction.contact.contactPage.nameInput).toBeVisible();
   });
 
@@ -38,8 +36,6 @@ test.describe("Contact Us Test Cases", () => {
     await appAction.contact.fillForm(contactData.valid);
 
     await appAction.contact.submitForm();
-
-
     await appAction.contact.clickHome();
 
     await expect(page).toHaveURL(contactData.baseUrl);
