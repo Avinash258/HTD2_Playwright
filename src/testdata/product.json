@@ -1,0 +1,20 @@
+{
+    "productBaseUrl": "https://automationexercise.com/products",
+    "productInfo": {
+        "name": "Men Tshirt",
+        "productPrice": "Rs. 400",
+        "quantity": "5"
+       
+    },
+    "reviewInfo":{
+        "name": "zed",
+        "email": "zed@autotest.com",
+        "reviewText": "This is a good website for doing practice of automation"
+    },
+    "breadcrumb" :{
+         "category": "Category: Men > Tshirts",
+        "brand": "Brand: H&M",
+        "availability": "Availability: In Stock",
+        "condition": "New"
+    }
+}
