@@ -3,9 +3,9 @@ import homeData from '../../src/testdata/home.json';
 
 test.describe('Home Page Test Cases', () => {
 
-    test.beforeEach(async ({ page, baseURL }) => {
-        await page.goto(baseURL);
-    });
+    // test.beforeEach(async ({ page, baseURL }) => {
+    //     await page.goto(baseURL);
+    // });
 
     test('TC001 - Verify home page loads successfully', async ({ appAction }) => {
         await appAction.home.verifyHomePageLoaded();

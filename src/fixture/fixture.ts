@@ -8,6 +8,7 @@ import { SearchPage } from "../page/searchPage";
 import { RegistrationAction } from "../action/registrationAction";
 import { HomeAction } from "../action/homeAction";
 import { HomePage } from "../page/homePage";
+import registrationData from "../testdata/registration.json";
 
 type AppActions = {
   home: HomeAction;
@@ -24,10 +25,13 @@ type Fixtures = {
 
 export const test = base.extend<Fixtures>({
   baseURL: async ({}, use) => {
-    await use(homeData.baseUrl);
+    await use(registrationData.baseUrl);
   },
 
-  appAction: async ({ page }, use) => {
+  appAction: async ({ page, baseURL }, use) => {
+
+    await page.goto(baseURL); 
+
     const appAction: AppActions = {
       home: new HomeAction(new HomePage(page)),
       login: new LoginAction(page),
@@ -38,7 +42,6 @@ export const test = base.extend<Fixtures>({
 
     await use(appAction);
   },
-
 });
 
 export { expect } from "@playwright/test";
