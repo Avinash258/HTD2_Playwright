@@ -21,4 +21,13 @@ async scrollToBottom(){
   async verifyScrollUpVisible(){
     return await this.homePage.scrollUpButton.isVisible();
   }  
+
+  async clickScrollUpButton() {
+    await this.homePage.scrollUpButton.click();
+  }
+
+  async verifyPageAtTop(){
+    const scrollPosition = await this.homePage.page.evaluate(() => window.scrollY);
+    return scrollPosition === 0;
+  }
 }
