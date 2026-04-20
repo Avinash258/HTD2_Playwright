@@ -12,7 +12,7 @@ import { AddToCartAction } from "../action/AddToCartAction";
 
 import registration from "../testdata/registration.json";
 type AppActions = {
-  
+   registration: RegistrationAction;
   addToCart: AddToCartAction;
 };
 type Fixtures = {
