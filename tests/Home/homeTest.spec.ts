@@ -3,26 +3,27 @@ import homeData from '../../src/testdata/home.json';
 
 test.describe('Home Page Test Cases', () => {
 
-    test('TC001 - Verify home page loads', async ({ appAction }) => {
-        await appAction.home.verifyHomePageLoaded(homeData.baseUrl);
+    test.beforeEach(async ({ page, baseURL }) => {
+        await page.goto(baseURL);
     });
 
-    test('TC002 - Verify navbar links', async ({ appAction }) => {
-        await appAction.home.verifyHomePageLoaded(homeData.baseUrl);
+    test('TC001 - Verify home page loads successfully', async ({ appAction }) => {
+        await appAction.home.verifyHomePageLoaded();
+    });
+
+    test('TC002 - Verify navbar links are visible', async ({ appAction }) => {
         await appAction.home.verifyNavbarLinks();
     });
 
-    test('TC003 - Verify logo redirect', async ({ appAction }) => {
+    test('TC003 - Verify logo click redirects to home', async ({ appAction }) => {
         await appAction.home.verifyLogoRedirect(homeData.baseUrl);
     });
 
-    test('TC004 - Verify featured products', async ({ appAction }) => {
-        await appAction.home.verifyHomePageLoaded(homeData.baseUrl);
+    test('TC004 - Verify featured products section is displayed', async ({ appAction }) => {
         await appAction.home.verifyFeaturedProducts();
     });
 
     test('TC005 - Verify category sidebar', async ({ appAction }) => {
-        await appAction.home.verifyHomePageLoaded(homeData.baseUrl);
         await appAction.home.verifyCategorySidebar();
     });
 

@@ -1,7 +1,6 @@
 import { test as base } from "@playwright/test";
 import { LoginAction } from "../action/loginAction";
-import loginData from "../testdata/login.json";
-
+import homeData from "../testdata/home.json";
 import { CartAction } from "../action/cartaction";
 import { CartPage } from "../page/cartPage";
 import { SearchAction } from "../action/searchAction";
@@ -17,22 +16,18 @@ type AppActions = {
   search: SearchAction;
   registration: RegistrationAction;
 };
+
 type Fixtures = {
-  gotoBaseUrl: void;
+  baseURL: string;
   appAction: AppActions;
 };
 
 export const test = base.extend<Fixtures>({
-  gotoBaseUrl: [
-    async ({ page }, use) => {
-      await page.goto(loginData.baseUrl);
-      await use();
-      },
-    { auto: true },
-  ],
+  baseURL: async ({}, use) => {
+    await use(homeData.baseUrl);
+  },
 
-
- appAction: async ({ page }, use: (value: AppActions) => Promise<void>) => {
+  appAction: async ({ page }, use) => {
     const appAction: AppActions = {
       home: new HomeAction(new HomePage(page)),
       login: new LoginAction(page),
@@ -40,10 +35,10 @@ export const test = base.extend<Fixtures>({
       search: new SearchAction(new SearchPage(page)),
       registration: new RegistrationAction(page),
     };
+
     await use(appAction);
   },
 
-  
 });
 
 export { expect } from "@playwright/test";
