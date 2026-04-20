@@ -34,7 +34,7 @@ export class AddToCartPage {
         this.changeQuantityBox = page.locator("//input[@type='number']");   
       //  this.AgianClickOnAddToCart = page.locator("//img[@src='/static/images/product-details/rating.png' and @alt='ecommerce website products']/parent::div/descendant::button");
         this.productCard = page.locator(".product-image-wrapper");
- this.ClickAddtoCart = page.locator("//a[@data-product-id='1']");
+this.ClickAddtoCart = page.locator('//img[@src="/get_product_picture/1" and @alt="ecommerce website products"]/parent::div/descendant::a');
  this.AgianClickOnAddToCart = page.getByRole('button', { name: /add to cart/i });
 
 
