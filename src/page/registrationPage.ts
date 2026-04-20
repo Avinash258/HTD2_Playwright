@@ -61,7 +61,7 @@ export class RegistrationPage {
 
 
 
-        this.mobilenumber = page.locator("//input[@id='mobile_number']"); // Anil
+        this.mobileNumber = page.locator("//input[@id='mobile_number']"); // Anil
 
 }
 
