@@ -7,13 +7,16 @@ import { CartPage } from "../page/cartPage";
 import { SearchAction } from "../action/searchAction";
 import { SearchPage } from "../page/searchPage";
 import { RegistrationAction } from "../action/registrationAction";
+import { TestCasesActions } from "../action/testcaseaction"; 
 
 type AppActions = {
   login: LoginAction;
   cart: CartAction;
   search: SearchAction;
   registration: RegistrationAction;
+  testCases: TestCasesActions; 
 };
+
 type Fixtures = {
   gotoBaseUrl: void;
   appAction: AppActions;
@@ -24,22 +27,21 @@ export const test = base.extend<Fixtures>({
     async ({ page }, use) => {
       await page.goto(loginData.baseUrl);
       await use();
-      },
+    },
     { auto: true },
   ],
 
-
- appAction: async ({ page }, use: (value: AppActions) => Promise<void>) => {
+  appAction: async ({ page }, use: (value: AppActions) => Promise<void>) => {
     const appAction: AppActions = {
       login: new LoginAction(page),
       cart: new CartAction(new CartPage(page)),
       search: new SearchAction(new SearchPage(page)),
       registration: new RegistrationAction(page),
+      testCases: new TestCasesActions(page), 
     };
+
     await use(appAction);
   },
-
-  
 });
 
 export { expect } from "@playwright/test";
