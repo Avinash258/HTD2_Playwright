@@ -15,7 +15,7 @@ export class HomeAction {
         await expect(this.homePage.page).toHaveURL("https://automationexercise.com/");
         await expect(this.homePage.logo).toBeVisible();
         await expect(this.homePage.navbar).toBeVisible();
-        await expect(this.homePage.featuredSection).toBeVisible();  ``
+        await expect(this.homePage.featuredSection).toBeVisible(); ``
         await expect(this.homePage.categorySidebar).toBeVisible();
     }
 
@@ -31,10 +31,8 @@ export class HomeAction {
             'Contact us'
         ];
 
-        for (const link of links) {
-            await expect(
-                this.homePage.navbar.getByText(link, { exact: true })
-            ).toBeVisible();
+        for (let i = 0; i < links.length; i++) {
+            await expect(this.homePage.navLinks.nth(i)).toContainText(links[i]);
         }
     }
 
