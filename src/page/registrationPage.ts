@@ -24,7 +24,12 @@ export class RegistrationPage {
 
     readonly accountCreatedMessage: Locator;
     readonly continueButton: Locator;
-    readonly loggedInAsText: Locator;
+    readonly loggedInAsText: Locator;    readonly newsletter: Locator;
+    readonly SpecialoffersNewsletter: Locator;
+    
+ 
+
+
 
     constructor(page: Page) {
         this.page = page;
@@ -32,6 +37,21 @@ export class RegistrationPage {
         this.signupName = page.locator('[data-qa="signup-name"]');
         this.signupEmail = page.locator('[data-qa="signup-email"]');
         this.signupButton = page.locator('[data-qa="signup-button"]');
+        this.signupLoginLink = page.getByRole('link', { name: 'Sign Up / Login' });
+        this.signupName = page.getByRole('textbox', { name: 'Name' });
+        this.signupEmail = page.locator('//*[@data-qa="signup-email"]');
+        this.signupButton = page.getByRole('button', { name: 'Sign Up' });
+        this.titleMr =    page.getByRole('radio', { name: 'Mr' });
+        this.password = page.getByLabel('password');
+
+        this.days = page.locator('#days');
+        this.months = page.locator('//select[@data-qa="months"]');
+        this.years = page.locator('[name="years"]');
+        this.newsletter = page.getByRole('checkbox', { name: 'Sign up for our newsletter!' });
+        this.SpecialoffersNewsletter = page.getByRole('checkbox', { name: 'Receive special offers from our partners!' });
+        
+        
+
 
         this.titleMr = page.locator("#id_gender1");
         this.password = page.locator('[data-qa="password"]');
