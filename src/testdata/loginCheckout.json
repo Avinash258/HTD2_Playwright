@@ -1,0 +1,40 @@
+{
+  "BaseUrl": "https://automationexercise.com/",
+  "Title": "Automation Exercise",
+  "Fill_up": {
+    "My Page Title": "Automation Exercise - Signup / Login",
+    "My Page LogoutTitle":"Automation Exercise - Signup / Login"
+  },
+  "Fill_details":
+    {
+  "password": "ASPassword123",
+  "firstName": "Sam",
+  "lastName": "Sholf",
+  "address": "123 Main Street",
+  "state": "Madhya Pradesh",
+  "city": "Bhopal",
+  "zipcode": "462001",
+  "mobilenumber": "9876543210"
+}
+,"SignupDetails":{
+  "emailId":"snn@gmail.com",
+   "Password":"asdf1234"  
+},
+"AddressDetails":{
+  "emailId":"snn@gmail.com",
+  "Password":"asdf1234"
+},
+"YourDeliveryAddress" :
+{
+  "deliveryAddressLastname": "Mr. snn n",
+  "deliveryAddress2" : "address_address1 address_address2",
+  "deliveryAddressPhone" : "1234567890"
+},
+
+"Your Addres Details":
+{
+  "billingAddressLastname":"Mr. snn n",
+  "billinCountry" : "address_country_name"
+}
+}
+ 
