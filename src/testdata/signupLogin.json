@@ -13,10 +13,5 @@
 
   "signupUser": {
     "name": "Test User"
-  },
-
-  "existingUser": {
-    "name": "Test User",
-    "email": "validuser@test.com"
   }
 }
