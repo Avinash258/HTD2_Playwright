@@ -22,7 +22,8 @@ export class RegistrationPage {
   readonly createAccountButton: Locator;
   readonly accountCreatedMessage: Locator;
   readonly continueButton: Locator;
-  readonly loggedInAsText: Locator;
+  readonly loggedInAsText: Locator;    
+
 
 <<<<<<< HEAD
     readonly titleMr: Locator;
