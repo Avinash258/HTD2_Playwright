@@ -24,7 +24,12 @@ export class RegistrationPage {
  
     readonly accountCreatedMessage: Locator;
     readonly continueButton: Locator;
-    readonly loggedInAsText: Locator;
+    readonly loggedInAsText: Locator;    readonly newsletter: Locator;
+    readonly SpecialoffersNewsletter: Locator;
+    
+ 
+
+
  
     constructor(page: Page) {
         this.page = page;
@@ -32,7 +37,7 @@ export class RegistrationPage {
         this.signupName = page.locator('[data-qa="signup-name"]');
         this.signupEmail = page.locator('[data-qa="signup-email"]');
         this.signupButton = page.locator('[data-qa="signup-button"]');
- 
+
         this.titleMr = page.locator("#id_gender1");
         this.password = page.locator('[data-qa="password"]');
         this.days = page.locator('[data-qa="days"]');
