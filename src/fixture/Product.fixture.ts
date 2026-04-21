@@ -1,6 +1,6 @@
 import { test as base } from "@playwright/test";
 import { ProductAction } from "../action/productAction";
-import { ProductPage } from "../page/productPage";
+import { ProductPage } from "../page/productPages";
 import productData from "../testdata/productData.json"
 
 import loginData from "../testdata/login.json";

@@ -1,5 +1,5 @@
 import { Page, expect } from "@playwright/test";
-import { ProductPage } from "../page/productPage";
+import { ProductPage } from "../page/productPages";
 
 export class ProductAction {
   readonly productPage: ProductPage;
