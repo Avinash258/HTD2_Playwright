@@ -6,7 +6,7 @@ test.describe('api test cases', () => {
   test('GET → Fetch list of posts', async ({ request }) => {
     const response = await request.get(`${apiBase}/posts`);
     expect(response.status()).toBe(200);
-
+   console.log(await response.json)
     const body = await response.json();
     expect(Array.isArray(body)).toBeTruthy();
     expect(body.length).toBeGreaterThan(0);
