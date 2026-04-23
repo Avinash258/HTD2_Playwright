@@ -1,16 +1,16 @@
 import { test as base } from "@playwright/test";
 import { SignupLoginAction } from "../action/signupLoginAction";
 
-type AppActions = {
+type AppsignupLoginActions = {
   signupLogin: SignupLoginAction;
 };
 
 type Fixtures = {
-  appAction: AppActions;
+  appsignupLoginAction: AppsignupLoginActions;
 };
 
 export const test = base.extend<Fixtures>({
-  appAction: async ({ page }, use) => {
+  appsignupLoginAction: async ({ page }, use) => {
     await use({
       signupLogin: new SignupLoginAction(page),
     });

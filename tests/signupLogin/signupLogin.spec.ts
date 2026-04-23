@@ -3,55 +3,55 @@ import SignupLoginData from '../../src/testdata/signupLogin.json';
 
 test.describe('Signup / Login Test Cases', () => {
 
-  test('TC006 - Verify login page opens from navbar', async ({ appAction }) => {
-    await appAction.signupLogin.navigateToLogin();
-    await appAction.signupLogin.verifyLoginPageLoaded();
+  test('TC006 - Verify login page opens from navbar', async ({ appsignupLoginAction }) => {
+    await appsignupLoginAction.signupLogin.navigateToLogin();
+    await appsignupLoginAction.signupLogin.verifyLoginPageLoaded();
   });
 
-  test('TC007 - Verify login with valid credentials', async ({ appAction }) => {
-    await appAction.signupLogin.navigateToLogin();
+  test('TC007 - Verify login with valid credentials', async ({ appsignupLoginAction }) => {
+    await appsignupLoginAction.signupLogin.navigateToLogin();
 
-    await appAction.signupLogin.login(
+    await appsignupLoginAction.signupLogin.login(
       SignupLoginData.validUser.email,
       SignupLoginData.validUser.password
     );
 
-    await appAction.signupLogin.verifyLoginSuccess();
+    await appsignupLoginAction.signupLogin.verifyLoginSuccess();
   });
 
-  test('TC008 - Verify login with invalid credentials', async ({ appAction }) => {
-    await appAction.signupLogin.navigateToLogin();
+  test('TC008 - Verify login with invalid credentials', async ({ appsignupLoginAction }) => {
+    await appsignupLoginAction.signupLogin.navigateToLogin();
 
-    await appAction.signupLogin.login(
+    await appsignupLoginAction.signupLogin.login(
       SignupLoginData.invalidUser.email,
       SignupLoginData.invalidUser.password
     );
 
-    await appAction.signupLogin.verifyInvalidLoginError();
+    await appsignupLoginAction.signupLogin.verifyInvalidLoginError();
   });
 
-  test('TC009 - Verify new user signup with valid details', async ({ appAction }) => {
-    await appAction.signupLogin.navigateToLogin();
+  test('TC009 - Verify new user signup with valid details', async ({ appsignupLoginAction }) => {
+    await appsignupLoginAction.signupLogin.navigateToLogin();
 
-    const email = appAction.signupLogin.generateEmail();
+    const email = appsignupLoginAction.signupLogin.generateEmail();
 
-    await appAction.signupLogin.signup(
+    await appsignupLoginAction.signupLogin.signup(
       SignupLoginData.signupUser.name,
       email
     );
 
-    await appAction.signupLogin.verifySignupPageLoaded();
+    await appsignupLoginAction.signupLogin.verifySignupPageLoaded();
   });
 
-  test('TC010 - Verify signup with already registered email', async ({ appAction }) => {
-    await appAction.signupLogin.navigateToLogin();
+  test('TC010 - Verify signup with already registered email', async ({ appsignupLoginAction }) => {
+    await appsignupLoginAction.signupLogin.navigateToLogin();
 
-    await appAction.signupLogin.signup(
+    await appsignupLoginAction.signupLogin.signup(
       SignupLoginData.signupUser.name,
       SignupLoginData.validUser.email
     );
 
-    await appAction.signupLogin.verifySignupError();
+    await appsignupLoginAction.signupLogin.verifySignupError();
   });
 
 });
