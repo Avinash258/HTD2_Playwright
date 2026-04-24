@@ -3,12 +3,12 @@ import { ContactActions } from "../action/contactactions";
 import { ContactPage } from "../page/contactpage";
 import contactData from "../testdata/contactdata.json";
 
-type AppActions = {
+type ContactData = {
   contact: ContactActions;
 };
 type Fixtures = {
-  gotoBaseUrl: void;
-  appAction: AppActions;
+  gotoBaseUrl: void;    
+  appAction: ContactData;
 };
 export const test = base.extend<Fixtures>({
   gotoBaseUrl: [
@@ -20,11 +20,11 @@ export const test = base.extend<Fixtures>({
   ],
   appAction: async ({ page }, use) => {
     const contactPage = new ContactPage(page);
-    const appAction: AppActions = {
+    const appAction: ContactData = {
       contact: new ContactActions(contactPage),
     };
     await use(appAction);
-  },
+  },  
 });
 
 export { expect } from "@playwright/test";

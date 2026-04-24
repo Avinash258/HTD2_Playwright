@@ -3,7 +3,7 @@ import { test, expect } from '../src/fixture/contactfixture';
 
 test.describe("Contact Us Test Cases", () => {
   test("TC01 - Verify Contact Us page opens", async ({ appAction }) => {
-
+                                                  
     await appAction.contact.navigateToContact();
     await expect(appAction.contact.contactPage.nameInput).toBeVisible();
     await expect(appAction.contact.contactPage.emailInput).toBeVisible();
