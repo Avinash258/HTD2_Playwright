@@ -32,4 +32,27 @@ console.log(await italycell.textContent())
 
 
 
+
+const Mexicocell:Locator =page.locator("//td[text()='Mexico']/self::td");
+expect(Mexicocell).toHaveText('Mexico');
+console.log(await  Mexicocell.textContent())
+
+
+//child axes-->I want to get the td element of the second tr
+
+const secondtrcell =page.locator("//table[@id='customers']//tr[2]/child::td");
+await expect(secondtrcell).toHaveCount(3);
+//console.log(await secondtrcell.allTextContents())
+
+//Parent axes--> get ancestor table of the germany cell
+
+//td[text()='Germany']/parent::tr/parent::tbody/parent::table
+
+const ancestortable:Locator=page.locator("//td[text()='Germany']/ancestor::table");
+expect(ancestortable).
+
+
+
+
+
 })
