@@ -22,9 +22,8 @@ export class RegistrationPage {
     readonly createAccountButton: Locator;
     readonly accountCreatedMessage: Locator;
     readonly continueButton: Locator;
-    readonly loggedInAsText: Locator;
- 
-    readonly loggedInAsText: Locator;    readonly newsletter: Locator;
+    readonly loggedInAsText: Locator;  
+    readonly newsletter: Locator;
     readonly SpecialoffersNewsletter: Locator;
     
  
@@ -43,16 +42,11 @@ export class RegistrationPage {
         this.signupButton = page.getByRole('button', { name: 'Sign Up' });
         this.titleMr =    page.getByRole('radio', { name: 'Mr' });
         this.password = page.getByLabel('password');
-
         this.days = page.locator('#days');
         this.months = page.locator('//select[@data-qa="months"]');
         this.years = page.locator('[name="years"]');
         this.newsletter = page.getByRole('checkbox', { name: 'Sign up for our newsletter!' });
         this.SpecialoffersNewsletter = page.getByRole('checkbox', { name: 'Receive special offers from our partners!' });
-        
-        
-
-
         this.titleMr = page.locator("#id_gender1");
         this.password = page.locator('[data-qa="password"]');
         this.days = page.locator('[data-qa="days"]');
