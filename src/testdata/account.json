@@ -3,26 +3,22 @@
   "Title": "Automation Exercise",
   "Fill_up": {
     "My Page Title": "Automation Exercise - Signup",
-    "My Page LogoutTitle":"Automation Exercise - Signup / Login"
+    "My Page LogoutTitle": "Automation Exercise - Signup / Login"
   },
-  "Fill_details":
-    {
-  "password": "yourPassword123",
+  "Fill_password": "yourPassword123",
   "firstName": "John",
   "lastName": "Doe",
   "address": "123 Main Street",
   "state": "Madhya Pradesh",
   "city": "Bhopal",
   "zipcode": "462001",
-  "mobilenumber": "9876543210"
-}
-,"LoginDetails":{
-  "loginID":"newvision1234@gmail.com",
-   "password":"nvs@1234"  
-},
-
+  "mobilenumber": "9876543210",
+  "LoginDetails": {
+    "loginID": "newvision1234@gmail.com",
+    "password": "nvs@1234"
+  },
   "Account_datails": {
-    "loginID": "nvs@gmail.com",
-    "password": "nvsoftware"
+    "loginID": "nvdeepanshu@gmail.com",
+    "password": "nvdeepanshu"
   }
 }
