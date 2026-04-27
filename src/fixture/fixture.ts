@@ -1,6 +1,7 @@
 import { test as base } from "@playwright/test";
 import { LoginAction } from "../action/loginAction";
 import loginData from "../testdata/login.json";
+import { getBaseUrl } from "../Utils/env";
 
 import { CartAction } from "../action/cartaction";
 import { CartPage } from "../page/cartPage";
@@ -22,7 +23,7 @@ type Fixtures = {
 export const test = base.extend<Fixtures>({
   gotoBaseUrl: [
     async ({ page }, use) => {
-      await page.goto(loginData.baseUrl);
+      await page.goto(getBaseUrl());
       await use();
       },
     { auto: true },

@@ -1,5 +1,6 @@
 import loginData from "../../src/testdata/login.json";
 import searchData from "../../src/testdata/search.json";
+import { getBaseUrl } from "../../src/Utils/env";
 import { test, expect } from "../../src/fixture/fixture";
 import { LoginAction } from "../../src/action/loginAction";
 
@@ -8,7 +9,7 @@ test.describe("Search / Sort Test Cases", () => {
 
 
     
-    await page.goto(loginData.baseUrl);
+    await page.goto(getBaseUrl());
     await appAction.login.login(loginData.validUser.username, loginData.validUser.password);
     await expect(page).toHaveURL(new RegExp(loginData.inventoryUrlPattern));
   });

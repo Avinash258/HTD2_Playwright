@@ -1,8 +1,9 @@
 import loginData from "../../src/testdata/login.json";
+import { getBaseUrl } from "../../src/Utils/env";
 import { test , expect } from "../../src/fixture/fixture";
 
 test.beforeEach(async ({ page }) => {
-    await page.goto(loginData.baseUrl);
+    await page.goto(getBaseUrl());
 console.log("Before Each Hook");
 });
 test.afterEach(async ({ page }) => {

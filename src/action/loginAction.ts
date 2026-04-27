@@ -19,6 +19,7 @@ export class LoginAction {
     await this.loginPage.usernameInput.fill(username);
     await this.loginPage.passwordInput.fill(password);
     await this.loginPage.loginButton.click();
+    console.log("Login attempted with cleared username input.");
   }
 
   getErrorMessage(): Locator {

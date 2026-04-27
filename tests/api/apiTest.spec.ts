@@ -3,11 +3,13 @@ import { test, expect } from '@playwright/test';
 test.describe('api test cases', () => {
   const apiBase = 'https://jsonplaceholder.typicode.com';
 
-  test('GET → Fetch list of posts', async ({ request }) => {
+  test('TC01 - GET → Fetch list of posts', async ({ request }) => {
     const response = await request.get(`${apiBase}/posts`);
     expect(response.status()).toBe(200);
+    console.log(response);
 
     const body = await response.json();
+   // console.log(body);
     expect(Array.isArray(body)).toBeTruthy();
     expect(body.length).toBeGreaterThan(0);
     expect(body[0]).toHaveProperty('id');
@@ -21,7 +23,8 @@ test.describe('api test cases', () => {
     expect(response.status()).toBe(200);
 
     const body = await response.json();
-    expect(body.id).toBe(1);
+    console.log(body);
+    expect.soft(body.id).toBe(1);
     expect(body).toHaveProperty('userId');
     expect(body).toHaveProperty('title');
     expect(body).toHaveProperty('body');
@@ -29,17 +32,16 @@ test.describe('api test cases', () => {
 
   test('POST → Create new post', async ({ request }) => {
     const payload = {
-      title: 'My New Post',
+      title: 'Avinash',
       body: 'This is the content of my new post',
       userId: 1,
     };
 
-    const response = await request.post(`${apiBase}/posts`, {
-      data: payload,
-    });
+    const response = await request.post(`${apiBase}/posts`, {data: payload, });
 
     expect(response.status()).toBe(201);
     const body = await response.json();
+    console.log(body);
 
     expect(body).toMatchObject(payload);
     expect(body).toHaveProperty('id');
@@ -61,6 +63,7 @@ test.describe('api test cases', () => {
     const body = await response.json();
 
     expect(body).toMatchObject(payload);
+    console.log(body);
   });
 
   test('PATCH → Partially update post', async ({ request }) => {
