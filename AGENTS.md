@@ -39,7 +39,7 @@ Use this file to understand the framework structure, common conventions, and the
 ## Notes for code changes
 - Avoid leaving `test.only` in test files.
 - Maintain the existing feature-folder organization under `tests`.
-- When adding or refining locators, prefer accessible selectors such as `getByRole` and commercial version of `getByText` used in this repo.
+- When adding or refining locators, prefer accessible selectors such as `getByRole` and the project's enhanced `getByText` convention used in this repo.
 - Keep test data in `src/testdata` and avoid hardcoding credentials or page details in spec files.
 - When changing config, respect the `BASE_URL` override from environment variables.
 

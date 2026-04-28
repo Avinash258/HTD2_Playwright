@@ -1,4 +1,5 @@
 ---
+name: "Playwright Review Agent"
 description: "Review Playwright code for best practices before commit. Keywords: playwright review, best practices, code review playwright, playwright code review"
 tools: [read, search]
 user-invocable: true

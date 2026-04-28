@@ -133,6 +133,26 @@ await appAction.cart.addBackpackToCart({
 });
 ```
 
+### Retry Multiplication Effect
+
+When both test-level retries and action-level retries are active, the total retry attempts multiply:
+
+**Formula**: `totalAttempts = (1 + testRetries) × (1 + actionRetries)`
+
+**Example with current defaults:**
+- Test-level retries: 1 (locally)
+- Action-level retries: 3 (DEFAULT_RETRY_CONFIG)
+- Total attempts: (1 + 1) × (1 + 3) = **8 attempts per test**
+
+On CI with 2 test-level retries:
+- Total attempts: (1 + 2) × (1 + 3) = **12 attempts per test**
+
+**Guidance:**
+- When both layers are active, the total time can exceed test timeout (30000ms). Consider reducing one of the retry counts if tests timeout.
+- If a test fails consistently across 8+ attempts, investigate the root cause instead of accepting transient failures.
+- For flaky network operations, prefer lowering test-level retries and keeping action-level retries moderate (maxRetries: 2-3).
+- If action-level retries are exhausted, escalate to investigation rather than relying on test-level retries to mask issues.
+
 ---
 
 ## 4. Flaky Test Debugging ✅

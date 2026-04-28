@@ -71,6 +71,12 @@ export class CartAction {
 
         const badgeText = await this.cartPage.cartBadge.innerText();
         const count = Number(badgeText.trim());
+        
+        if (isNaN(count)) {
+            console.warn(`[CartAction] Badge text is not numeric: "${badgeText}", returning 0`);
+            return 0;
+        }
+        
         console.log(`[CartAction] Badge count: ${count}`);
         return count;
     }

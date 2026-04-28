@@ -67,10 +67,6 @@ test.describe("Cart Page Test Cases", () => {
    * Retries managed by playwright.config.ts
    */
   test("TC06 - New login starts with empty cart", async ({ appAction, page }) => {
-    console.log("[TC06] Waiting for page to stabilize after login...");
-    // Extra auto-wait to ensure page is fully ready
-    await page.waitForLoadState('networkidle');
-
     console.log("[TC06] Verifying empty cart state...");
     await expectCartState(appAction.cart, 0, 0);
   });
