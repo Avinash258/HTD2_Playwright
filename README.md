@@ -133,3 +133,15 @@ npx playwright test tests/Cart/cartTest.spec.ts
 - Add CI pipeline integration
 - Add environment-based execution and secrets handling
 - Add API mock and network stubbing strategy
+
+## Environment Configuration
+
+This repository now supports environment-based test configuration via a `.env` file.
+
+- Create or update `.env` in the project root
+- Use `BASE_URL` to override the default application URL
+- Example file: `.env.example`
+
+```bash
+BASE_URL=https://www.saucedemo.com/
+```
