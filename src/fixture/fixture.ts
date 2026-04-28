@@ -9,6 +9,7 @@ import { SearchAction } from "../action/searchAction";
 import { SearchPage } from "../page/searchPage";
 import { RegistrationAction } from "../action/registrationAction";
 import { Productaction } from "../action/productaction";
+import { SignupLoginPage } from "../page/signupLoginPage";
 
 type AppActions = {
   login: LoginAction;

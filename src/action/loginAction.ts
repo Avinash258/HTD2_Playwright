@@ -22,6 +22,6 @@ export class LoginAction {
   }
 
   getErrorMessage(): Locator {
-    return this.loginPage.errorMessage;
+    return this.loginPage.errorMessage; 
   }
 }

@@ -3,6 +3,7 @@ import { test , expect } from "../../src/fixture/fixture";
 
 test.beforeEach(async ({ page }) => {
     await page.goto(loginData.baseUrl);
+    await page.waitForLoadState('load');
 console.log("Before Each Hook");
 });
 test.afterEach(async ({ page }) => {
