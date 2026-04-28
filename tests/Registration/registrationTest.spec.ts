@@ -3,7 +3,7 @@ import { test, expect } from "../../src/fixture/fixture";
 test.describe.configure({ mode: "serial" });
 
 test.describe("Registration flow", () => {
-  test("TC11 - Register user with Faker email and store in JSON", async ({ appAction }) => {
+  test("TC11 - Register user with Faker email and store in JSON", async ({ page, appAction }) => {
     const user = await appAction.registration.registerNewRandomUserAndPersist();
     await expect(appAction.registration.registrationPage.loggedInAsText).toBeVisible();
 
@@ -12,7 +12,7 @@ test.describe("Registration flow", () => {
     expect(savedData.generatedUser.name).toBe(user.name);
   });
 
-  test("TC12 - Login using stored generated user", async ({ appAction }) => {
+  test("TC12 - Login using stored generated user", async ({ page, appAction }) => {
     const data = await appAction.registration.readRegistrationData();
     await test.skip(!data.generatedUser.email, "No generated user found in registration.json");
 
