@@ -13,8 +13,10 @@ console.log("After Each Hook");
 
 test("TC01 - Valid user should login successfully", async ({ page, appAction }) => {
 await appAction.login.loginWithClear(loginData.validUser.username,loginData.validUser.password);
+
 await expect(page).toHaveTitle(loginData.PageTitle);
 await expect(page).toHaveURL(new RegExp(loginData.inventoryUrlPattern));
+await page.waitForLoadState('networkidle');
 await appAction.search.sortBy("Name (A to Z)");
 });
 

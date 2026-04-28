@@ -15,9 +15,12 @@ export class LoginAction {
   }
   async loginWithClear(username: string, password: string) {
     await this.loginPage.usernameInput.fill(username);
+    
     await this.loginPage.usernameInput.clear();
     await this.loginPage.usernameInput.fill(username);
+    
     await this.loginPage.passwordInput.fill(password);
+   
     await this.loginPage.loginButton.click();
     console.log("Login attempted with cleared username input.");
   }
