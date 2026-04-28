@@ -1,13 +1,18 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "commonjs",
-    "moduleResolution": "node",
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
     "strict": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "types": ["node"],
     "skipLibCheck": true
   },
+<<<<<<< HEAD
   "include": ["src/**/*.ts", "tests/**/*.ts", "src/fixture/fixtureR.ts"]
 }
+=======
+  "include": ["src/**/*.ts", "tests/**/*.ts"]
+}
+>>>>>>> b84573f12c3aa64a87b6473efaa7bd6c7e6eb096

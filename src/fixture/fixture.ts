@@ -1,7 +1,11 @@
 import { test as base } from "@playwright/test";
 import { LoginAction } from "../action/loginAction";
 import loginData from "../testdata/login.json";
+<<<<<<< HEAD
 import registrationData from "../testdata/registration.json";
+=======
+import { getBaseUrl } from "../Utils/env";
+>>>>>>> b84573f12c3aa64a87b6473efaa7bd6c7e6eb096
 
 import { CartAction } from "../action/cartaction";import { ProductPage } from "../page/productPage";
 import { CartPage } from "../page/cartPage";
@@ -25,7 +29,11 @@ type Fixtures = {
 export const test = base.extend<Fixtures>({
   gotoBaseUrl: [
     async ({ page }, use) => {
+<<<<<<< HEAD
       await page.goto(registrationData.baseUrl);
+=======
+      await page.goto(getBaseUrl());
+>>>>>>> b84573f12c3aa64a87b6473efaa7bd6c7e6eb096
       await use();
       },
     { auto: true },
