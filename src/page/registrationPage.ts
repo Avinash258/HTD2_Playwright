@@ -9,6 +9,19 @@ export class RegistrationPage {
 
     readonly titleMr: Locator;
     readonly password: Locator;
+    readonly date: Locator;
+    readonly month: Locator;
+    readonly year: Locator;
+    readonly newsletter: Locator;
+    readonly SpecialoffersNewsletter: Locator;
+    
+    readonly create_Account :Locator;
+ 
+
+
+    readonly country: Locator; // updated by shubham
+    readonly state: Locator; // updated by shubham
+
     readonly days: Locator;
     readonly months: Locator;
     readonly years: Locator;
@@ -24,14 +37,60 @@ export class RegistrationPage {
 
     readonly accountCreatedMessage: Locator;
     readonly continueButton: Locator;
-    readonly loggedInAsText: Locator;
+    readonly loggedInAsText: Locator;    readonly newsletter: Locator;
+    readonly SpecialoffersNewsletter: Locator;
+    
+ 
+
+
 
     constructor(page: Page) {
         this.page = page;
+        this.signupLoginLink = page.getByRole('link', { name: 'Sign Up / Login' });
+        this.signupName = page.getByRole('textbox', { name: 'Name' });
+        this.signupEmail = page.locator('//*[@data-qa="signup-email"]');
+        this.signupButton = page.getByRole('button', { name: 'Sign Up' });
+        this.title =    page.getByRole('radio', { name: 'Mr' });
+        this.title2 =    page.getByRole('radio', { name: 'Mrs' });
+        this.username = page.getByLabel('name');
+        this.useremail = page.getByLabel('email');
+        this.password = page.getByLabel('password');
+
+        this.date = page.locator('#days');
+        this.month = page.locator('//select[@data-qa="months"]');
+        this.year = page.locator('[name="years"]');
+        //Deepanshu changes
+        
+        this.create_Account=page.locator('//button[text()="Create Account"]')
+        
+        
+
+        this.country = page.locator("//select[@id='country']");  // updated by shubham
+        this.state = page.locator("//input[@id='state']"); // updated by shubham
+        
+
+
+}
+
         this.signupLoginLink = page.getByRole("link", { name: "Signup / Login" });
         this.signupName = page.locator('[data-qa="signup-name"]');
         this.signupEmail = page.locator('[data-qa="signup-email"]');
         this.signupButton = page.locator('[data-qa="signup-button"]');
+        this.signupLoginLink = page.getByRole('link', { name: 'Sign Up / Login' });
+        this.signupName = page.getByRole('textbox', { name: 'Name' });
+        this.signupEmail = page.locator('//*[@data-qa="signup-email"]');
+        this.signupButton = page.getByRole('button', { name: 'Sign Up' });
+        this.titleMr =    page.getByRole('radio', { name: 'Mr' });
+        this.password = page.getByLabel('password');
+
+        this.days = page.locator('#days');
+        this.months = page.locator('//select[@data-qa="months"]');
+        this.years = page.locator('[name="years"]');
+        this.newsletter = page.getByRole('checkbox', { name: 'Sign up for our newsletter!' });
+        this.SpecialoffersNewsletter = page.getByRole('checkbox', { name: 'Receive special offers from our partners!' });
+        
+        
+
 
         this.titleMr = page.locator("#id_gender1");
         this.password = page.locator('[data-qa="password"]');
