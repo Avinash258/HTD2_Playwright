@@ -1,7 +1,7 @@
 import { Page, Locator } from '@playwright/test';
- 
+
 export class HomePage {
- 
+
     readonly page: Page;
     readonly logo: Locator;
     readonly navbar: Locator;
@@ -16,7 +16,7 @@ export class HomePage {
     readonly womenCategory: Locator;
     readonly menCategory: Locator;
     readonly kidsCategory: Locator;
- 
+
     constructor(page: Page) {
         this.page = page;
         this.logo = page.locator('a[href="/"] img');
@@ -29,11 +29,11 @@ export class HomePage {
         this.productNames = this.productCards.locator('.productinfo p');
         this.productPrices = this.productCards.locator('.productinfo h2');
         this.addToCartButtons = this.productCards.locator('a.add-to-cart:visible');
-        this.womenCategory = this.categorySidebar.getByText('Women', { exact: true });
-        this.menCategory = this.categorySidebar.getByText('Men', { exact: true });
+        this.womenCategory = this.categorySidebar.getByText('Women', { exact: true }); 
+        this.menCategory = this.categorySidebar.getByText('Men', { exact: true }); 
         this.kidsCategory = this.categorySidebar.getByText('Kids', { exact: true });
     }
- 
+
     async clickLogo() {
         await this.logo.click();
     }
