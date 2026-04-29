@@ -8,10 +8,6 @@ import { CartPage } from "../page/cartPage";
 import { SearchAction } from "../action/searchAction";
 import { SearchPage } from "../page/searchPage";
 import { RegistrationAction } from "../action/registrationAction";
-
-import { HomePageActions } from "../action/HomePageAction";
-
-
 import { Productaction } from "../action/productaction";
 import {getBaseUrl} from "../Utils/env"
 
@@ -21,7 +17,6 @@ type AppActions = {
   cart: CartAction;
   search: SearchAction;
   registration: RegistrationAction;
-  home:HomePageActions;
   product: Productaction;
 };
 
@@ -46,7 +41,6 @@ export const test = base.extend<Fixtures>({
       cart: new CartAction(new CartPage(page)),
       search: new SearchAction(new SearchPage(page)),
       registration: new RegistrationAction(page),
-      home:new HomePageActions(page),
       product: new Productaction(page),
     };
 

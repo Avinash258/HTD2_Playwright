@@ -23,20 +23,15 @@
   "homepage": "https://github.com/Avinash258/HTD2_Playwright#readme",
   "devDependencies": {
     "@playwright/test": "^1.59.1",
-    "@types/node": "^25.5.2",
-    "typescript": "^6.0.3",
-    "dotenv": "^16.1.4"
+    "@types/node": "^25.6.0"
   },
   "dependencies": {
     "@faker-js/faker": "^10.4.0",
+    "dotenv": "^17.4.2",
     "playwright": "^1.59.1"
   },
   "directories": {
     "test": "tests"
   },
-  "type": "commonjs",
-  "devDependencies": {
-    "@playwright/test": "^1.59.1",
-    "@types/node": "^25.6.0"
-  }
+  "type": "commonjs"
 }
