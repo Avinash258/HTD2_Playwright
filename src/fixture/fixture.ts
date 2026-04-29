@@ -9,6 +9,7 @@ import { SearchAction } from "../action/searchAction";
 import { SearchPage } from "../page/searchPage";
 import { RegistrationAction } from "../action/registrationAction";
 import { Productaction } from "../action/productaction";
+import {getBaseUrl} from "../Utils/env"
 
 type AppActions = {
   login: LoginAction;

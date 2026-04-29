@@ -1,5 +1,5 @@
 import{Locator,Page} from "@playwright/test";
-export class HomePage{//register
+export class HomePage{
     readonly page:Page
     readonly AutomationImage :Locator;
     readonly  SignUp :Locator
