@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 
   "name": "htdplaywright2",
 
@@ -44,11 +45,36 @@
 
   "homepage": "https://github.com/Avinash258/HTD2_Playwright#readme",
 
+=======
+  "name": "htdplaywright2",
+  "version": "1.0.0",
+  "description": "Playwright automation framework for HTD",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "report": "playwright show-report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Avinash258/HTD2_Playwright.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Avinash258/HTD2_Playwright/issues"
+  },
+  "homepage": "https://github.com/Avinash258/HTD2_Playwright#readme",
+>>>>>>> abfa091a8f54146ccfd4205147842c6b444089bd
   "devDependencies": {
 
     "@playwright/test": "^1.59.1",
 
     "@types/node": "^25.6.0"
+<<<<<<< HEAD
 
   },
 
@@ -62,5 +88,17 @@
 
   }
 
+=======
+  },
+  "dependencies": {
+    "@faker-js/faker": "^10.4.0",
+    "dotenv": "^17.4.2",
+    "playwright": "^1.59.1"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "type": "commonjs"
+>>>>>>> abfa091a8f54146ccfd4205147842c6b444089bd
 }
 

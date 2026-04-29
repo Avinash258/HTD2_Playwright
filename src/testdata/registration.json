@@ -17,8 +17,13 @@
     "mobileNumber": "9876543210"
   },
   "generatedUser": {
+<<<<<<< HEAD
     "name": "Lola",
     "email": "lola47@examplemail.com",
+=======
+    "name": "Ronaldo",
+    "email": "ronaldo_waelchi74@examplemail.com",
+>>>>>>> abfa091a8f54146ccfd4205147842c6b444089bd
     "password": "Test@12345"
   }
 }
