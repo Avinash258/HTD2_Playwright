@@ -1,4 +1,4 @@
-import{test ,expect} from '../../src/fixture/fixture';
+import{test ,expect} from '../../src/fixture/home_UI_fixture';
 
 test('TC_46 Verify scroll up button visible after scrolling down ',async ({appAction}) =>{
     await appAction.home.openHomePage();
@@ -11,7 +11,7 @@ test('TC_46 Verify scroll up button visible after scrolling down ',async ({appAc
     await appAction.home.openHomePage();
     await appAction.home.scrollToBottom();   
     await appAction.home.clickScrollUpButton();
-    await appAction.home.homePage.page.waitForTimeout(2000);
+    //await appAction.home.homePage.page.waitForTimeout(2000);
     const isAtTop =await appAction.home.verifyPageAtTop();
     await expect(isAtTop).toBeTruthy();
 });

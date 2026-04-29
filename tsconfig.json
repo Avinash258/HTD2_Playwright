@@ -11,6 +11,7 @@
     "types": ["node"],
     "skipLibCheck": true
   },
+<<<<<<< HEAD
   "include": ["src/**/*.ts", "tests/**/*.ts", "src/fixture/fixture.ts"]
 }
 
@@ -19,3 +20,7 @@
 
 
  
+=======
+  "include": ["src/**/*.ts", "tests/**/*.ts", "src/fixture/fixtureR.ts"]
+}
+>>>>>>> abfa091a8f54146ccfd4205147842c6b444089bd

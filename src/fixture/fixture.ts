@@ -2,19 +2,12 @@ import { test as base } from "@playwright/test";
 import { LoginAction } from "../action/loginAction";
 import homeData from "../testdata/home.json";
 import registrationData from "../testdata/registration.json";
-import homeData from "../testdata/home.json";
-import registrationData from "../testdata/registration.json";
 import { CartAction } from "../action/cartaction";
-import { ProductPage } from "../page/productPage";
 import { ProductPage } from "../page/productPage";
 import { CartPage } from "../page/cartPage";
 import { SearchAction } from "../action/searchAction";
 import { SearchPage } from "../page/searchPage";
 import { RegistrationAction } from "../action/registrationAction";
-
-import { HomePageActions } from "../action/HomePageAction";
-
-
 import { Productaction } from "../action/productaction";
 import {getBaseUrl} from "../Utils/env"
 
@@ -23,7 +16,6 @@ type AppActions = {
   cart: CartAction;
   search: SearchAction;
   registration: RegistrationAction;
-  home:HomePageActions;
   product: Productaction;
 };
 
@@ -48,7 +40,6 @@ export const test = base.extend<Fixtures>({
       cart: new CartAction(new CartPage(page)),
       search: new SearchAction(new SearchPage(page)),
       registration: new RegistrationAction(page),
-      home:new HomePageActions(page),
       product: new Productaction(page),
     };
 
