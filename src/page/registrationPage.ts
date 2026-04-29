@@ -23,6 +23,54 @@ export class RegistrationPage {
   readonly accountCreatedMessage: Locator;
   readonly continueButton: Locator;
   readonly loggedInAsText: Locator;
+    readonly page: Page;
+    readonly signupLoginLink: Locator;
+    readonly signupName: Locator;
+    readonly signupEmail: Locator;
+    readonly signupButton: Locator;
+ 
+    readonly titleMr: Locator;
+    readonly password: Locator;
+    readonly days: Locator;
+    readonly months: Locator;
+    readonly years: Locator;
+    readonly firstName: Locator;
+    readonly lastName: Locator;
+    readonly address: Locator;
+    readonly country: Locator;
+    readonly state: Locator;
+    readonly city: Locator;
+    readonly zipcode: Locator;
+    readonly mobileNumber: Locator;
+    readonly createAccountButton: Locator;
+ 
+    readonly accountCreatedMessage: Locator;
+    readonly continueButton: Locator;
+    readonly loggedInAsText: Locator;    readonly newsletter: Locator;
+    readonly SpecialoffersNewsletter: Locator;
+    
+ 
+
+
+ 
+    constructor(page: Page) {
+        this.page = page;
+        this.signupLoginLink = page.getByRole("link", { name: "Signup / Login" });
+        this.signupName = page.locator('[data-qa="signup-name"]');
+        this.signupEmail = page.locator('[data-qa="signup-email"]');
+        this.signupButton = page.locator('[data-qa="signup-button"]');
+
+    this.titleMr = page.locator("#id_gender1");
+    this.password = page.locator('[data-qa="password"]');
+    readonly accountCreatedMessage: Locator;
+    readonly continueButton: Locator;
+    readonly loggedInAsText: Locator;  
+    readonly newsletter: Locator;
+    readonly SpecialoffersNewsletter: Locator;
+
+  readonly accountCreatedMessage: Locator;
+  readonly continueButton: Locator;
+  readonly loggedInAsText: Locator;
   readonly newsletter: Locator;
   readonly SpecialoffersNewsletter: Locator;
 
