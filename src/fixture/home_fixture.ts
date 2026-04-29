@@ -1,6 +1,6 @@
 import { test as base } from "@playwright/test";
-import { HomeAction } from "../action/homeAction";
-import { HomePage } from "../page/homePage";
+import { HomeAction } from "../../src/action/homeaction";
+import { HomePage } from "../../src/page/homepage";
 import registrationData from "../testdata/registration.json";
 
 type AppActions = {
