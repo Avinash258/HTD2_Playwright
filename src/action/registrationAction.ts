@@ -28,6 +28,7 @@ type RegistrationData = {
     zipcode: string;
     mobileNumber: string;
   };
+  //we are storing data to json jo user create honge 
   generatedUser: GeneratedRegistrationUser;
 };
  
