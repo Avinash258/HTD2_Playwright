@@ -38,24 +38,26 @@ export class RegistrationPage {
         this.signupEmail = page.locator('[data-qa="signup-email"]');
         this.signupButton = page.locator('[data-qa="signup-button"]');
 
-        this.titleMr = page.locator("#id_gender1");
-        this.password = page.locator('[data-qa="password"]');
-        this.days = page.locator('[data-qa="days"]');
-        this.months = page.locator('[data-qa="months"]');
-        this.years = page.locator('[data-qa="years"]');
-        this.firstName = page.locator('[data-qa="first_name"]');
-        this.lastName = page.locator('[data-qa="last_name"]');
-        this.address = page.locator('[data-qa="address"]');
-        this.country = page.locator('[data-qa="country"]');
-        this.state = page.locator('[data-qa="state"]');
-        this.city = page.locator('[data-qa="city"]');
-        this.zipcode = page.locator('[data-qa="zipcode"]');
-        this.mobileNumber = page.locator('[data-qa="mobile_number"]');
-        this.createAccountButton = page.locator('[data-qa="create-account"]');
+    this.titleMr = page.locator("#id_gender1");
+    this.password = page.locator('[data-qa="password"]');
+
+    this.days = page.locator('[data-qa="days"]');
+    this.months = page.locator('[data-qa="months"]');
+    this.years = page.locator('[data-qa="years"]');
+
+    this.firstName = page.locator('[data-qa="first_name"]');
+    this.lastName = page.locator('[data-qa="last_name"]');
+    this.address = page.locator('[data-qa="address"]');
+    this.country = page.locator('[data-qa="country"]');
+    this.state = page.locator('[data-qa="state"]');
+    this.city = page.locator('[data-qa="city"]');
+    this.zipcode = page.locator('[data-qa="zipcode"]');
+    this.mobileNumber = page.locator('[data-qa="mobile_number"]');
+    this.createAccountButton = page.locator('[data-qa="create-account"]');
  
-        this.accountCreatedMessage = page.getByText("Account Created!");
-        this.continueButton = page.locator('[data-qa="continue-button"]');
-        this.loggedInAsText = page.getByText("Logged in as");
-    }
+    this.accountCreatedMessage = page.getByText("Account Created!");
+    this.continueButton = page.locator('[data-qa="continue-button"]');
+    this.loggedInAsText = page.getByText("Logged in as");
+  }
 }
  

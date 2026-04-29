@@ -26,14 +26,13 @@ type Fixtures = {
 export const test = base.extend<Fixtures>({
   gotoBaseUrl: [
     async ({ page }, use) => {
-      await page.goto(registrationData.baseUrl);
+      await page.goto(getBaseUrl());
       await use();
       },
     { auto: true },
   ],
 
-
- appAction: async ({ page }, use: (value: AppActions) => Promise<void>) => {
+  appAction: async ({ page }, use) => {
     const appAction: AppActions = {
       login: new LoginAction(page),
       cart: new CartAction(new CartPage(page)),
