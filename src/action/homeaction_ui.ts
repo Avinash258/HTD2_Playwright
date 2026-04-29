@@ -1,17 +1,17 @@
 import { Page } from "@playwright/test";
-import { HomePage_UI } from "../page/HomePage";
+import { Homepage_UI } from "../page/homepage_UI";
 import testData from '../testdata/registration.json';
 
 export class HomePageActions_UI {
-    readonly homePage: HomePage_UI;
+    readonly homePage: Homepage_UI;
 
     constructor(page: Page) {
-        this.homePage = new HomePage_UI(page);
+        this.homePage = new Homepage_UI(page);
     }
 
     // Open URL from JSON
     async openHomePage() {
-        await this.homePage.page.goto(testData.baseUrl,{ timeout: 60000 });
+        await this.homePage.page.goto(testData.baseUrl, { timeout: 60000 });
     }
 
     // Scroll to bottom
@@ -31,7 +31,7 @@ export class HomePageActions_UI {
 
     // Verify page is at top (waits properly)
     async verifyPageAtTop() {
-        await this.homePage.page.waitForTimeout(2000);
+        await this.homePage.page.evaluate(() => window.scrollTo(0, 0));
         await this.homePage.page.waitForFunction(() => window.scrollY === 0);
         return true;
     }
@@ -41,27 +41,27 @@ export class HomePageActions_UI {
         return {
             heading: await this.homePage.subscriptionHeading.isVisible(),
             email: await this.homePage.subscriptionEmailInput.isVisible(),
-            button: await this.homePage.subscriptionButton.isVisible() 
+            button: await this.homePage.subscriptionButton.isVisible()
         };
     }
 
-    async subscribeWithEmail(email:string){
+    async subscribeWithEmail(email: string) {
         await this.homePage.subscriptionEmailInput.fill(email);
         await this.homePage.subscriptionButton.click();
     }
-    async isSubscriptionSuccessVisible(){
+    async isSubscriptionSuccessVisible() {
         return await this.homePage.subscriptionSuccessMessage.isVisible();
     }
 
-    async navigateToProducts(){
+    async navigateToProducts() {
         await this.homePage.productsLink.click();
     }
 
-    async isBrandSectionVisible(){
+    async isBrandSectionVisible() {
         return await this.homePage.brandsSection.isVisible();
     }
 
-    async getBrandsList(){
+    async getBrandsList() {
         return await this.homePage.brandNames.allTextContents();
     }
 }

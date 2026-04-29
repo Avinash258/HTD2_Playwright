@@ -1,0 +1,18 @@
+{
+  "baseUrl": "https://automationexercise.com/",
+  "homeUrl": "https://automationexercise.com/",
+  "valid": {
+    "name": "Anil Pandey",
+    "email": "anil@test.com",
+    "subject": "Test Subject",
+    "message": "This is a test message"
+  },
+  "blank": {
+    "name": "",
+    "email": "",
+    "subject": "",
+    "message": ""
+  },
+
+  "successMessage": "Success! Your details have been submitted successfully."
+}
