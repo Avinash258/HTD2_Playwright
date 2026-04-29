@@ -1,5 +1,5 @@
 import { expect, Page } from '@playwright/test';
-import { HomePage } from '../page/homepage';
+import { HomePage } from '../page/homePage';
 
 export class HomeAction {
 
