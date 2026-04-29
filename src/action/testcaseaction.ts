@@ -22,7 +22,7 @@ export class TestCasesActions {
     await this.page.getByRole('link', { name: testCaseName }).click();
   }
   async verifyTestCaseExpanded(expectedText: string) {
-    const expandedPanel = this.page.locator("//u[.='Test Case 1: Register User']"); 
+    const expandedPanel = this.page.locator("//u[.='Test Case 1: Register User']");
 
     await expect(expandedPanel).toContainText(expectedText);
   }
@@ -52,7 +52,7 @@ export class TestCasesActions {
 
       const url = new URL(src, this.page.url()).toString();
       const response = await this.page.request.get(url);
-     
+
       expect(
         response.status(),
         ` Broken image found: ${url}`

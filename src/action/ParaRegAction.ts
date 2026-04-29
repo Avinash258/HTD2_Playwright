@@ -1,10 +1,10 @@
 import { Locator, Page } from "playwright";
-import {Registration } from "../page/ParaRegepage";
+import { Registration } from "../page/ParaRegepage";
 
-export class ParaAction{
+export class ParaAction {
     readonly regist: Registration;
 
-    constructor(page: Page){
+    constructor(page: Page) {
         this.regist = new Registration(page);
     }
     async filldata(
@@ -19,7 +19,7 @@ export class ParaAction{
         Username: string,
         password: string,
         confirm: string
-    ){
+    ) {
 
         await this.regist.FirstName.fill(FirstName)
         await this.regist.LastName.fill(LastName)
@@ -32,9 +32,9 @@ export class ParaAction{
         await this.regist.Username.fill(Username)
         await this.regist.Password.fill(password)
         await this.regist.Confirm.fill(confirm)
-        
+
     }
-    async Register(){
+    async Register() {
         return this.regist.Register.click();
     }
 }

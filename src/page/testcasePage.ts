@@ -11,13 +11,13 @@ export class TestCasesPage {
   readonly images: Locator;
   constructor(page: Page) {
     this.page = page;
-this.testCasesLink = this.page.locator('//a[@href="/test_cases"]').first();
+    this.testCasesLink = this.page.locator('//a[@href="/test_cases"]').first();
     this.pageHeader = page.locator('h2');
     this.testCaseItems = page.locator('.panel');
     this.accordionHeadings = page.locator('.panel-heading a');
     this.accordionContent = page.locator('.panel-collapse');
     this.images = page.locator('img');
   }
-  }
+}
 
 
