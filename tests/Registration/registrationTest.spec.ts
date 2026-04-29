@@ -11,6 +11,7 @@ test.describe("Registration flow", () => {
     const savedData = await appAction.registration.readRegistrationData();
     expect(savedData.generatedUser.email).toBe(user.email);
     expect(savedData.generatedUser.name).toBe(user.name);
+    await expect(page).toHaveScreenshot('registration-success.png');
   });
 
   test("TC12 - Login using stored generated user", async ({ page, appAction }) => {
@@ -19,5 +20,6 @@ test.describe("Registration flow", () => {
 
     await appAction.registration.loginWithStoredUser();
     await expect(appAction.registration.registrationPage.loggedInAsText).toBeVisible();
+    await expect(page).toHaveScreenshot('login-stored-user.png');
   });
 });

@@ -3,6 +3,9 @@ import { test, expect } from '@playwright/test';
 test.describe('api test cases', () => {
   const apiBase = 'https://jsonplaceholder.typicode.com';
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
   test('TC01 - GET → Fetch list of posts', async ({ request }) => {
     const response = await request.get(`${apiBase}/posts`);
     expect(response.status()).toBe(200);
@@ -138,11 +141,21 @@ test.describe('api test cases', () => {
 test.describe('api test cases', () => {
   const apiBase = 'https://jsonplaceholder.typicode.com';
 
+>>>>>>> abfa091a8f54146ccfd4205147842c6b444089bd
   test('GET → Fetch list of posts', async ({ request }) => {
     const response = await request.get(`${apiBase}/posts`);
     expect(response.status()).toBe(200);
+   console.log(await response.json)
+    const body = await response.json();
+=======
+  test('TC01 - GET → Fetch list of posts', async ({ request }) => {
+    const response = await request.get(`${apiBase}/posts`);
+    expect(response.status()).toBe(200);
+    console.log(response);
 
     const body = await response.json();
+   // console.log(body);
+>>>>>>> b84573f12c3aa64a87b6473efaa7bd6c7e6eb096
     expect(Array.isArray(body)).toBeTruthy();
     expect(body.length).toBeGreaterThan(0);
     expect(body[0]).toHaveProperty('id');
@@ -156,7 +169,12 @@ test.describe('api test cases', () => {
     expect(response.status()).toBe(200);
 
     const body = await response.json();
+<<<<<<< HEAD
     expect(body.id).toBe(1);
+=======
+    console.log(body);
+    expect.soft(body.id).toBe(1);
+>>>>>>> b84573f12c3aa64a87b6473efaa7bd6c7e6eb096
     expect(body).toHaveProperty('userId');
     expect(body).toHaveProperty('title');
     expect(body).toHaveProperty('body');
@@ -164,17 +182,29 @@ test.describe('api test cases', () => {
 
   test('POST → Create new post', async ({ request }) => {
     const payload = {
+<<<<<<< HEAD
       title: 'My New Post',
+=======
+      title: 'Avinash',
+>>>>>>> b84573f12c3aa64a87b6473efaa7bd6c7e6eb096
       body: 'This is the content of my new post',
       userId: 1,
     };
 
+<<<<<<< HEAD
     const response = await request.post(`${apiBase}/posts`, {
       data: payload,
     });
 
     expect(response.status()).toBe(201);
     const body = await response.json();
+=======
+    const response = await request.post(`${apiBase}/posts`, {data: payload, });
+
+    expect(response.status()).toBe(201);
+    const body = await response.json();
+    console.log(body);
+>>>>>>> b84573f12c3aa64a87b6473efaa7bd6c7e6eb096
 
     expect(body).toMatchObject(payload);
     expect(body).toHaveProperty('id');
@@ -196,6 +226,10 @@ test.describe('api test cases', () => {
     const body = await response.json();
 
     expect(body).toMatchObject(payload);
+<<<<<<< HEAD
+=======
+    console.log(body);
+>>>>>>> b84573f12c3aa64a87b6473efaa7bd6c7e6eb096
   });
 
   test('PATCH → Partially update post', async ({ request }) => {
