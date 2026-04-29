@@ -6,7 +6,10 @@ export class SearchAction {
 
     async sortBy(option: string) { await this.searchPage.sortDropdown.selectOption(option); }
 
-    async getFirstProductName() { return this.searchPage.productNames.first().innerText(); }
+    async getFirstProductName() {
+        await this.searchPage.productNames.first().waitFor({ state: 'visible', timeout: 5000 });
+         return this.searchPage.productNames.first().innerText(); 
+        }
 
     async getFirstProductPrice() { return this.searchPage.productPrices.first().innerText(); }
 }
