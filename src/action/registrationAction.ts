@@ -3,13 +3,13 @@ import { faker } from "@faker-js/faker";
 import * as fs from "fs/promises";
 import * as path from "path";
 import { RegistrationPage } from "../page/registrationPage";
-
+// faker se jo bhe user gerenate hoga uska structure hai
 export type GeneratedRegistrationUser = {
   name: string;
   email: string;
   password: string;
 };
-
+//json file ka structure define kar rahe hai 
 type RegistrationData = {
   baseUrl: string;
   accountInfo: {
@@ -28,6 +28,7 @@ type RegistrationData = {
     zipcode: string;
     mobileNumber: string;
   };
+  //we are storing data to json jo user create honge 
   generatedUser: GeneratedRegistrationUser;
 };
 
