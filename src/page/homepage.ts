@@ -1,6 +1,6 @@
 import { Locator, Page } from "@playwright/test";
 
-export class HomePage {
+export class HomePage_UI {
    readonly page: Page;
    readonly scrollUpButton: Locator;
    readonly subscriptionHeading: Locator;

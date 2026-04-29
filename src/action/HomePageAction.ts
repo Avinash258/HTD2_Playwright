@@ -1,12 +1,12 @@
 import { Page } from "@playwright/test";
-import { HomePage } from "../page/HomePage";
+import { HomePage_UI } from "../page/HomePage";
 import testData from '../testdata/registration.json';
 
-export class HomePageActions {
-    readonly homePage: HomePage;
+export class HomePageActions_UI {
+    readonly homePage: HomePage_UI;
 
     constructor(page: Page) {
-        this.homePage = new HomePage(page);
+        this.homePage = new HomePage_UI(page);
     }
 
     // Open URL from JSON

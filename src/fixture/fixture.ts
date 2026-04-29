@@ -6,7 +6,7 @@ import { SearchAction } from "../action/searchAction";
 import { SearchPage } from "../page/searchPage";
 import { RegistrationAction } from "../action/registrationAction";
 
-import { HomePageActions } from "../action/HomePageAction";
+import { HomePageActions_UI } from "../action/HomePageAction";
 
 
 import { Productaction } from "../action/productaction";
@@ -17,7 +17,7 @@ type AppActions = {
   cart: CartAction;
   search: SearchAction;
   registration: RegistrationAction;
-  home:HomePageActions;
+  home:HomePageActions_UI;
   product: Productaction;
 };
 
@@ -42,7 +42,8 @@ export const test = base.extend<Fixtures>({
       cart: new CartAction(new CartPage(page)),
       search: new SearchAction(new SearchPage(page)),
       registration: new RegistrationAction(page),
-      home:new HomePageActions(page),
+      home:new HomePageActions_UI(page),
+
       product: new Productaction(page),
     };
     await use(appAction);
