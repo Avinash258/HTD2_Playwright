@@ -1,5 +1,6 @@
 import { Page, Locator } from '@playwright/test';
 
+
 export class ContactPage {
   readonly page: Page;
   readonly contactLink: Locator;

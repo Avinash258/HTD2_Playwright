@@ -1,6 +1,5 @@
 import { Page, expect } from '@playwright/test';
-import { ContactPage } from '../page/contactpage';
-import { getUserData } from '../Utils/fakerdata';
+import { ContactPage } from '../page/contactpage'
 
 type ContactData = {
   name: string;

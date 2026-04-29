@@ -1,5 +1,6 @@
 import { test, expect } from "../../src/fixture/fixture";
 
+
 test.describe.configure({ mode: "serial" });
 
 test.describe("Registration flow", () => {
