@@ -7,8 +7,8 @@ import registrationData from "../testdata/registration.json";
 =======
 import { getBaseUrl } from "../Utils/env";
 >>>>>>> b84573f12c3aa64a87b6473efaa7bd6c7e6eb096
-
-import { CartAction } from "../action/cartaction";import { ProductPage } from "../page/productPage";
+import { CartAction } from "../action/cartaction";
+import { ProductPage } from "../page/productPage";
 =======
 import homeData from "../testdata/home.json";
 import registrationData from "../testdata/registration.json";
@@ -21,6 +21,8 @@ import { SearchPage } from "../page/searchPage";
 import { RegistrationAction } from "../action/registrationAction";
 import { Productaction } from "../action/productaction";
 import {getBaseUrl} from "../Utils/env"
+import { Productaction } from "../action/productaction";
+import { SignupLoginPage } from "../page/signupLoginPage";
 
 type AppActions = {
   login: LoginAction;
@@ -37,6 +39,7 @@ type Fixtures = {
 };
 
 export const test = base.extend<Fixtures>({
+
   gotoBaseUrl: [
     async ({ page }, use) => {
 <<<<<<< HEAD
@@ -53,9 +56,10 @@ export const test = base.extend<Fixtures>({
     { auto: true },
   ],
 
-<<<<<<< HEAD
-  appAction: async ({ page }, use: (value: AppActions) => Promise<void>) => {
-=======
+<<<<<<< HEAD  appAction: async ({ page }, use) => {
+    const signupLoginPage = new SignupLoginPage(page);
+
+ =======
   appAction: async ({ page }, use) => {
 >>>>>>> abfa091a8f54146ccfd4205147842c6b444089bd
     const appAction: AppActions = {
@@ -68,12 +72,8 @@ export const test = base.extend<Fixtures>({
 
     await use(appAction);
   },
-<<<<<<< HEAD
-=======
 
   
-
->>>>>>> abfa091a8f54146ccfd4205147842c6b444089bd
 });
 
 export { expect } from "@playwright/test";
