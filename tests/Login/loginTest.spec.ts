@@ -1,8 +1,9 @@
 import loginData from "../../src/testdata/login.json";
+import { getBaseUrl } from "../../src/Utils/env";
 import { test , expect } from "../../src/fixture/fixture";
 
 test.beforeEach(async ({ page }) => {
-    await page.goto(loginData.baseUrl);
+    await page.goto(getBaseUrl());
     await page.waitForLoadState('load');
 console.log("Before Each Hook");
 });
@@ -13,8 +14,10 @@ console.log("After Each Hook");
 
 test("TC01 - Valid user should login successfully", async ({ page, appAction }) => {
 await appAction.login.loginWithClear(loginData.validUser.username,loginData.validUser.password);
+
 await expect(page).toHaveTitle(loginData.PageTitle);
 await expect(page).toHaveURL(new RegExp(loginData.inventoryUrlPattern));
+await page.waitForLoadState('networkidle');
 await appAction.search.sortBy("Name (A to Z)");
 });
 

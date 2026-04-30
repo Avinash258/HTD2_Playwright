@@ -1,0 +1,31 @@
+{
+  "baseUrl": "https://automationexercise.com",
+  "testCasesPage": {
+    "pageTitle": "Automation Exercise - Test Cases",
+    "headerText": "Test Cases",
+    "minTestCaseItems": 1
+  },
+  "navigation": {
+    "testCasesLinkName": "Test Cases"
+  },
+  "accordion": {
+    "testCases": [
+      {
+        "name": "Test Case 1: Register User",
+        "expectedText": "Register User"
+      },
+      {
+        "name": "Test Case 2: Login User",
+        "expectedText": "Login User"
+      },
+      {
+        "name": "Test Case 3: Logout User",
+        "expectedText": "Logout User"
+      }
+    ]
+  },
+  "images": {
+    "shouldBeVisible": true,
+    "shouldHaveSrc": true
+  }
+}

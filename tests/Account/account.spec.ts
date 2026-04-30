@@ -1,9 +1,8 @@
 
 import {test,expect} from  "../../src/fixture/fixtureR";
-import { faker } from '@faker-js/faker';
 import loginDate from "../../src/testdata/account.json"
 
-test.only("Verify Account Registration Field", async ({ page, appaction, randomUser }) => {
+test("Verify Account Registration Field", async ({ page, appaction, randomUser }) => {
 
   await page.goto(loginDate.BaseUrl);
 
@@ -16,7 +15,7 @@ test.only("Verify Account Registration Field", async ({ page, appaction, randomU
 
   await expect(page).toHaveTitle(loginDate.Fill_up["My Page Title"]);
 });
-test.only
+test
 ("Acccount is successful created ",async({page,appaction,randomUser})=>{
    await page.goto(loginDate.BaseUrl);
 
@@ -34,7 +33,7 @@ test.only
   await appaction.register.submitForm()
   await expect(page).toHaveURL(/account_created|success/i);
 });
-test.only("Verified logging user displayed in nav-bar",async({page,appaction})=>{
+test("Verified logging user displayed in nav-bar",async({page,appaction})=>{
  await page.goto(loginDate.BaseUrl);
   await appaction.home.clickOnSign();
   await appaction.account.loginin(loginDate.LoginDetails.loginID,loginDate.LoginDetails.password);
@@ -42,7 +41,7 @@ test.only("Verified logging user displayed in nav-bar",async({page,appaction})=>
    await expect(page.locator('[class="fa fa-user"]')).toBeEnabled()
    
 });
-test.only("Delete the acccount",async({page,appaction})=>{
+test("Delete the acccount",async({page,appaction})=>{
 await page.goto(loginDate.BaseUrl);
   await appaction.home.clickOnSign()
     await appaction.account.loginin(loginDate.Account_datails.loginID,loginDate.Account_datails.password);
@@ -50,7 +49,7 @@ await page.goto(loginDate.BaseUrl);
   await page.locator("//i[@class='fa fa-trash-o']").click()
   console.log("Deleted Account")
 });
-test.only("Verified logging out  displayed in nav-bar",async({page,appaction,})=>{
+test("Verified logging out  displayed in nav-bar",async({page,appaction,})=>{
  await page.goto(loginDate.BaseUrl);
   await appaction.home.clickOnSign();
   await appaction.account.loginin(loginDate.LoginDetails.loginID,loginDate.LoginDetails.password);

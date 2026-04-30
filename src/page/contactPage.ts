@@ -1,26 +1,24 @@
-// import { Page, Locator } from "@playwright/test";
+import { Page, Locator } from '@playwright/test';
 
-// export class ContactPage {
 
-//   readonly page: Page;
+export class ContactPage {
+  readonly page: Page;
+  readonly contactLink: Locator;
+  readonly nameInput: Locator;
+  readonly emailInput: Locator;
+  readonly subjectInput: Locator;
+  readonly messageInput: Locator;
+  readonly submitBtn: Locator;
+  readonly homeBtn: Locator;
 
-//   readonly name: Locator;
-//   readonly email: Locator;
-//   readonly subject: Locator;
-//   readonly message: Locator;
-//   readonly fileUpload: Locator;
-//   readonly submitBtn: Locator;
-//   readonly successMsg: Locator;
-
-//   constructor(page: Page) {
-//     this.page = page;
-
-//     this.name = page.locator('input[name="name"]');
-//     this.email = page.locator('input[name="email"]');
-//     this.subject = page.locator('input[name="subject"]');
-//     this.message = page.locator('textarea[name="message"]');
-//     this.fileUpload = page.locator('input[type="file"]');
-//     this.submitBtn = page.locator('input[type="submit"]');
-//     this.successMsg = page.locator('.status.alert-success'); 
-//   }
-// }
+  constructor(page: Page) {
+    this.page = page;
+    this.contactLink = page.locator('a[href="/contact_us"]');
+    this.nameInput = page.locator('[data-qa="name"]');
+    this.emailInput = page.locator('[data-qa="email"]');
+    this.subjectInput = page.locator('[data-qa="subject"]');
+    this.messageInput = page.locator('[data-qa="message"]');
+    this.submitBtn = page.locator('[data-qa="submit-button"]');
+    this.homeBtn = page.locator('a:has-text("Home")');
+  }
+}
