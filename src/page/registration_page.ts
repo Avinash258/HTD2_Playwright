@@ -1,5 +1,8 @@
 import { Locator,Page } from "@playwright/test";
 export class RegistrationPage{
+    loggedInAsText(loggedInAsText: any) {
+      throw new Error("Method not implemented.");
+    }
     
     
     readonly page:Page;

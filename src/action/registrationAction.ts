@@ -3,6 +3,7 @@ import { faker } from "@faker-js/faker";
 import * as fs from "fs/promises";
 import * as path from "path";
 import { RegistrationPage } from "../page/registration_page";
+import
 
 export type GeneratedRegistrationUser = {
   name: string;
